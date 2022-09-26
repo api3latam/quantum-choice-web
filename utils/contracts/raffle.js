@@ -23,4 +23,4 @@ export async function getHistory(targetAddress) {
 
     const raffleIds = await raffle.getEnteredRaffles(targetAddress);
     return raffleIds;
-}
+};
