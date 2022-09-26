@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@web3-react/injected-connector": "^6.0.7",
     "bootstrap": "^5.2.1",
     "ethers": "^5.7.1",
     "font-awesome": "^4.7.0",
@@ -19,7 +20,8 @@
     "react": "18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "18.2.0",
-    "web3": "^1.8.0"
+    "web3": "^1.8.0",
+    "web3-react": "^5.0.5"
   },
   "devDependencies": {
     "eslint": "8.23.1",
