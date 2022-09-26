@@ -2,8 +2,47 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { useEffect } from 'react'
+import { useWeb3React } from '@web3-react/core'
+import { injected } from '../components/wallet/connectors'
 
 const Banner = () => {
+  
+  const { active, account, library, connector, activate, deactivate } =
+    useWeb3React();
+
+  async function connect() {
+    try {
+      await activate(injected);
+      localStorage.setItem("isWalletConnected", true);
+    } catch (ex) {
+      console.log(ex);
+    }
+  }
+
+  async function disconnect() {
+    try {
+      deactivate();
+      localStorage.setItem("isWalletConnected", false);
+    } catch (ex) {
+      console.log(ex);
+    }
+  }
+
+  useEffect(() => {
+    const connectWalletOnPageLoad = async () => {
+      if (localStorage?.getItem("isWalletConnected") === "true") {
+        try {
+          await activate(injected);
+          localStorage.setItem("isWalletConnected", true);
+        } catch (ex) {
+          console.log(ex);
+        }
+      }
+    };
+    connectWalletOnPageLoad();
+  }, []);
+  
   return (
     <div>
       <div className="banner-area">
@@ -15,13 +54,21 @@ const Banner = () => {
               <div class="col-lg-12">
                 <h4 class="title">Quantum Choice</h4>
                 <ul class="breadcrumb-list">
-                  <li>
-                    <a href="index.html">
-                      <img src="/images/navbar/Icon_142.png" />
-                      Home
-                    </a>
-                  </li>
+                  {active ? (  <li>
+                    <a  href="#" class="btnsi ml-auto" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
+                  </li>):(  <li>
+                    <a  href="#" class="btnsi ml-auto" onClick={connect} data-toggle="modal"> Connect wallet</a>
+                  </li>)}
                 </ul>
+                {active ? (
+                  <p className="h2 text-white">
+                    Connected with <b>{account}</b>
+                  </p>
+                ) : (
+                  <p className="h2 text-white">
+                    Not connected
+                  </p>
+                )}
               </div>
             </div>
           </div>
