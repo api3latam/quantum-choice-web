@@ -12,4 +12,4 @@ export async function getSigner(networkName) {
         process.env['NEXT_PUBLIC_PK'],
         provider
     );
-}
+};

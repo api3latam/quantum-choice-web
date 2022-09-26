@@ -10,5 +10,5 @@ export async function getContracts() {
     const nft = new Contract("NFT", nftAbi, signer);
     const raffle = new Contract("Raffle", raffleAbi, signer);
     
-    return { nft: nft, raffle: raffle }
-}
+    return { nft: nft, raffle: raffle };
+};
