@@ -11,8 +11,8 @@ config.autoAddCss = false
 import { Web3ReactProvider } from '@web3-react/core';
 import { providers } from "ethers";
 
-function getLibrary() {
-  return new providers.Web3ReactProvider();
+function getLibrary(provider, connector) {
+  return new providers.Web3ReactProvider(provider);
 }
 
 

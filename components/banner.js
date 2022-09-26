@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
@@ -8,7 +6,7 @@ import { injected } from '../components/wallet/connectors'
 
 const Banner = () => {
   
-  const { active, account, library, connector, activate, deactivate } =
+  const { active, account, activate, deactivate } =
     useWeb3React();
 
   async function connect() {
