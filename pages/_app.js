@@ -8,11 +8,11 @@ import '../styles/bootstrap.min.css'
 import '../styles/responsive.css'
 config.autoAddCss = false
 
-import { Web3ReactProvider } from '@web3-react/core'
-import Web3 from "web3";
+import { Web3ReactProvider } from '@web3-react/core';
+import { providers } from "ethers";
 
-function getLibrary(provider) {
-  return new Web3(provider);
+function getLibrary() {
+  return new providers.Web3ReactProvider();
 }
 
 
