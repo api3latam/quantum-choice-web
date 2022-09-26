@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Navbar from '../components/navbar'
 import Banner from '../components/banner'
 import LatestActivites  from '../components/latestActivites'
+
+
 export default function Home() {
   return (
     <div >
