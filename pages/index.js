@@ -6,6 +6,8 @@ import LatestActivites  from '../components/latestActivites'
 
 
 export default function Home() {
+  
+
   return (
     <div >
       <Head>

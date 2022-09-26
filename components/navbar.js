@@ -5,7 +5,6 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
 
-
     return (
         <React.Fragment>
             <div className='navbar-container '>
