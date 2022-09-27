@@ -10,20 +10,7 @@ const Navbar = () => {
             <div className='navbar-container '>
                 <div className='top-navbar'>
                     <div className='container'>
-                        <div className='row'>
-                            <div className='col-lg-12'>
-                                <div className='content'>
-                                    <div className='right-content'>
-                                        <div className='sign-in '>
-                                            <a href='#'>
-
-                                                <i><img src='/images/navbar/Icon_142.png' />Sign In</i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 
