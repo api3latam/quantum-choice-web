@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Link from 'next/link';
 
 const Navbar = () => {
 
@@ -36,15 +37,15 @@ const Navbar = () => {
                                     <div class="collapse  navbar-collapse fixed-height" id="main_menu">
                                         <ul class="navbar-nav  ">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">HOME
+                                                <a class="nav-link" href="/">HOME
                                                     <div class="mr-hover-effect"></div></a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">PLAY
+                                                <a class="nav-link" href="/play">PLAY
                                                     <div class="mr-hover-effect"></div></a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">CHOICE
+                                                <a class="nav-link" href="/choice">CHOICE
                                                     <div class="mr-hover-effect"></div></a>
                                             </li>
 
