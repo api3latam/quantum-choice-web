@@ -57,12 +57,18 @@ const Banner = () => {
                   
                   {active ? (  <li>
                     <a  href="#" class="btnsi ml-auto" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
+                    <p className="h2 text-white">
+                        Connected with <b>{account}</b>
+                      </p>
                   </li>):(  <li>
                     <a  href="#" class="btnsi ml-auto" onClick={connect} data-toggle="modal"> Connect wallet</a>
+                     <p className="h2 text-white">
+                        Not connected
+                      </p>
                   </li>)}
 
                   <li>
-                    <div className="slider float-right">
+                    <div className="slider p-4">
                     <div className="bannerItems">
                       <BannerSingleItem data={singleItem1}/>
                     </div>
@@ -70,15 +76,7 @@ const Banner = () => {
                     </div>
                   </li>
                 </ul>
-                {active ? (
-                  <p className="h2 text-white">
-                    Connected with <b>{account}</b>
-                  </p>
-                ) : (
-                  <p className="h2 text-white">
-                    Not connected
-                  </p>
-                )}
+              
               </div>
             </div>
           </div>
