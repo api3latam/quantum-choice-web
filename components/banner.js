@@ -3,6 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useEffect,useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { injected } from '../components/wallet/connectors'
+import { WalletConnect } from "../components/wallet/connectors";
 import BannerSingleItem from '../components/bannerSingleItem'
 
 const Banner = () => {
@@ -15,7 +16,7 @@ const Banner = () => {
 
   async function connect() {
     try {
-      await activate(injected);
+      await activate(WalletConnect);
       localStorage.setItem("isWalletConnected", true);
     } catch (ex) {
       console.log(ex);

@@ -13,7 +13,7 @@ const BannerSingleItem = (props) => {
 
       <div className="buttonItemPart mt-4">
         <a	href="#" class="btnsi" data-toggle="modal" data-target="#signin" >
-					Activa
+					CHOICE ME
 				</a>  
       </div>      
             
