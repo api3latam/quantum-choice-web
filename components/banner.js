@@ -1,12 +1,14 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { useEffect } from 'react'
+import { useEffect,useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { injected } from '../components/wallet/connectors'
 import BannerSingleItem from '../components/bannerSingleItem'
 
 const Banner = () => {
-  const singleItem1 ={image:'/images/banner/NFTs.png'}
+  /**State for image url */
+  const [imageUrl, setImageUrl] = useState('/images/banner/NFTs.png');
+  const singleItem1 ={image:imageUrl}
  
   const { active, account, activate, deactivate } =
     useWeb3React();
