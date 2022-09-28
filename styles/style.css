@@ -23,7 +23,10 @@ h5 {
 p {
   font-size: initial !important;
 }
-
+.attribution{
+  float: right;
+  margin-right: 1em;
+}
 .btnsi {
   text-decoration: none;
   font-size: 16px;
