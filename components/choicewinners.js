@@ -22,7 +22,7 @@ const LatestActivites = () => {
 					</div>
 				</div>
 			</div>
-			<div className="areabutton-container justify-content-center">
+						<div className="areabutton-container justify-content-center">
 				<div class="container justify-content-center">
 					<div class="row ">
 						<div class="col-lg-5 col-md-12 ">
@@ -30,25 +30,65 @@ const LatestActivites = () => {
 								<a
 									href="#"
 									class="btnsi"
-									data-toggle="modal"
-									data-target="#signin"
+									data-bs-toggle="modal" data-bs-target="#exampleModal"
 								>
-									{" "}
+
 									Purchased Choice
 								</a>
 							</div>
+
+							{/* Modal 1*/}
+							
+							<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered modal-lg">
+									<div class="modal-content">										
+										<div class="modal-body">
+											<div className="botonClose ">
+												<button type="button" class="btnC " data-bs-dismiss="modal" aria-label="Close">
+													X
+												</button>
+											</div>
+											
+											<div className="btnsi"  >
+												<h1 style={{ 'font-size': '5vw'}}>winner</h1>
+											</div>  
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							
 						</div>
-						<div class="col-lg-4 col-md-12">
+						<div class="col-lg-4 col-md-12 modaltryagain">
 							<div class="single-button">
 								<a
 									href="#"
 									class="btnsi"
-									data-toggle="modal"
-									data-target="#signin"
+									data-bs-toggle="modal" data-bs-target="#exampleModal2"
 								>
-									{" "}
+
 									My Choice
 								</a>
+							</div>
+							{/* Modal 2*/}
+							
+							<div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered modal-lg">
+									<div class="modal-content">										
+										<div class="modal-body ">
+											<div className="botonClose ">
+												<button type="button" class="btnC " data-bs-dismiss="modal" aria-label="Close">
+													X
+												</button>
+											</div>
+											
+											<div className="btnsi"  >
+												<h1 style={{ 'font-size': '5vw'}}>Try Again</h1>
+											</div>  
+										</div>
+										
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-12">
@@ -59,7 +99,7 @@ const LatestActivites = () => {
 									data-toggle="modal"
 									data-target="#signin"
 								>
-									{" "}
+
 									History
 								</a>
 							</div>
@@ -67,7 +107,6 @@ const LatestActivites = () => {
 					</div>
 				</div>
 			</div>
-
 			<div className="container">
 				<div class="table-responsive">
 					<table class="table table-activities">

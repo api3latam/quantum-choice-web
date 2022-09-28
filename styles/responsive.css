@@ -181,9 +181,28 @@
     padding: 230px 0px 94px;
   }
 
+  
 
 }
+@media (max-width: 588px) {
+  .modal {
+    display:flex;
+    justify-content: center;    
+    align-items: center;
+    overflow: auto;
+    width: 100% !important;
+    margin: 0% !important;
+  }
 
+  .modal-dialog {
+    width: 100% !important;
+    display:flex;
+    justify-content: center;    
+    align-items: center;
+    margin-left: 4rem;
+  }
+
+}
 
 @media (max-width: 575px) {
   
