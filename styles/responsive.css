@@ -66,7 +66,14 @@
   }
 
  
+  .slideBanner {  
+    margin-bottom:30px ;
+  }
 
+  .breadcrumb-area .breadcrumb-list li {  
+    margin-bottom: 30px;
+  }
+  
 
   .breadcrumb-area .title {
     font-size: 40px;
@@ -105,7 +112,6 @@
 
   
  
-
   .breadcrumb-area.bc-tournaments {
     padding: 188px 0px 94px;
   }
@@ -121,19 +127,7 @@
     padding: 187px 0px 96px;
   }
 
-  .single-deposit-bonus {
-    margin-bottom: 30px;
-  }
-
-  .deposit-bonuses {
-    padding: 112px 0px 90px;
-  }
-
-  .single-deposit-bonus .content .title {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
+ 
   
 
   .navbar-container .navbar-area .navbar #main_menu .navbar-nav .nav-item .dropdown-menu {
@@ -155,29 +149,7 @@
 }
 
 @media (max-width: 767px) {
-  .hero-area .left-content .content .title {
-    font-size: 50px;
-    line-height: 60px;
-  }
-
-  .hero-area .left-content .content .subtitle {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
-  .hero-area .left-content .content .text {
-    font-size: 20px;
-    line-height: 30px;
-  }
-
-  .hero-img2 {
-    margin-top: 60px;
-  }
-
-  .hero-area {
-    padding: 189px 0px 265px;
-  }
-
+  
   .navbar-container .top-header .content {
     display: flow-root;
   }
@@ -196,32 +168,6 @@
     font-size: 16px;
   }
 
-  .footer .subscribe-box {
-    padding: 50px 30px 55px;
-  }
-
-  .hero-area .left-content {
-    text-align: center;
-  }
-
-  .responsive-table {
-    max-width: 100%;
-    overflow-x: auto;
-  }
-
-  .activities .tab-menu-area .nav-lend .nav-item .nav-link {
-    line-height: 40px;
-    margin: 3px;
-  }
-
-  .activities .tab-menu-area .nav-lend {
-    padding: 14px 15px;
-  }
-
-  .funfact .single-fun .count-area {
-    font-size: 30px;
-    line-height: 40px;
-  }
 
   .breadcrumb-area.play {
     padding: 230px 0px 218px;
@@ -235,197 +181,12 @@
     padding: 230px 0px 94px;
   }
 
-  .tournament-time-box .top-area .status {
-    font-size: 14px;
-    height: 30px;
-    line-height: 30px;
-  }
-
-  .tournament-time-box .top-area .title {
-    font-size: 22px;
-    line-height: 32px;
-  }
-
-  .tournaments .info-table .main-box .inner-table-content .navbar-container -area ul .nav-item .nav-link {
-    padding: 0px 30px;
-    margin: 0px 3px;
-  }
-
-  .tournaments .info-table .main-box .inner-table-content .table tr td {
-    font-size: 16px;
-    line-height: 26px;
-  }
-
-  .breadcrumb-area.bc-affiliate {
-    padding: 229px 0px 174px;
-  }
-
-  .breadcrumb-area.bc-awards {
-    padding: 228px 0px 94px;
-  }
-
-  .breadcrumb-area.bonus {
-    padding: 229px 0px 96px;
-  }
-
-  .breadcrumb-area.cart {
-    padding: 230px 0px 94px;
-  }
-
-  .cart-area .message-one {
-    padding: 22px 30px 28px;
-  }
-
-  .cart-area .message-two {
-    display: flow-root;
-  }
-
-  .cart-area .message-two .left p {
-    margin-bottom: 30px;
-  }
-
-  .cart-area .cart-table-area .table tr td .qty {
-    width: 120px;
-  }
-
-  .breadcrumb-area.bc-faq {
-    padding: 229px 0px 95px;
-  }
-
-  .breadcrumb-area.h-i-w {
-    padding: 230px 0px 93px;
-  }
-
-  .breadcrumb-area.bc-terms {
-    padding: 229px 0px 150px;
-  }
-
-  .serch-area .serch-box .list {
-    display: block;
-  }
-
-  .serch-area .serch-box .list li.button {
-    width: 100%;
-    margin-top: 30px;
-    margin-left: 0px;
-  }
-
-  .serch-area .serch-box {
-    padding: 20px 50px 40px;
-    border-radius: 20px;
-    ;
-  }
-
-  .help-section .help-box .help-box-inner .title {
-    font-size: 30px;
-    line-height: 40px;
-  }
-
-  .help-section .help-box .help-box-inner2-hearer .title {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
-  .help-section .help-box .help-box-inner2 .single-artical .content .title {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
-  .help-section .help-box {
-    padding: 29px 30px 40px !important;
-  }
-
-  .help-section.writter-artical-details .help-box {
-    padding: 29px 30px 40px !important;
-  }
-
-  .breadcrumb-area.bc-contact {
-    padding: 230px 0px 94px;
-  }
-
-  .index2 .hero-area {
-    padding: 283px 0px 314px;
-  }
-
-  .get-start .left-area .section-heading {
-    text-align: center;
-  }
-
-  .activities .shape.shape1,
-  .activities .shape.shape2,
-  .activities .shape.shape3 {
-    display: none;
-  }
-
-
 
 }
 
 
 @media (max-width: 575px) {
-  .hero-area {
-    padding: 232px 0px 265px;
-  }
-
-  .hero-area .left-content .content .subtitle {
-    font-size: 20px;
-    line-height: 30px;
-  }
-
-  .hero-area .left-content .content .title {
-    font-size: 40px;
-    line-height: 50px;
-  }
-
-  .section-heading .title {
-    font-size: 30px;
-    line-height: 40px;
-  }
-
-  .features .single-feature .content .title {
-    font-size: 20px;
-    line-height: 30px;
-  }
-
-  .tournaments .info-table .main-box .main-header-area .nav li a {
-
-    line-height: 30px;
-    font-size: 20px;
-    margin: 0px 1px;
-  }
-
-  .tournaments .info-table .main-box .main-header-area .nav li::before {
-    height: 18px;
-  }
-
-  .tournaments .info-table .main-box .inner-table-content .navbar-container -area ul .nav-item .nav-link {
-    margin: 3px 3px;
-  }
-
-  .tournaments .info-table .main-box .inner-table-content .navbar-container -area ul {
-    border-radius: 10px;
-    padding: 14px 15px;
-  }
-
-  .single-process .num {
-    font-size: 140px;
-  }
-
-  .footer .subscribe-box .heading-area .sub-title {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
-  .footer .subscribe-box .heading-area .title {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
-  .four-zero-four .content .inner-content .title {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
+  
   .breadcrumb-area .bc-img {
     display: none;
   }
@@ -434,207 +195,18 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .play-games .gaming-activities .gaming-activities-inner .single-activities {
-    padding: 0px 30px 27px;
-  }
-
-  .play-games .all-games .nav {
-    margin-bottom: 55px;
-  }
-
-  .flip-clock-divider .flip-clock-label {
-    font-size: 16px;
-  }
-
-  .flip-clock-divider .flip-clock-label {
-    bottom: -20px;
-  }
-
-  .flip-clock-divider .flip-clock-label {
-    right: -72px;
-  }
-
-  .flip-clock-divider.hours .flip-clock-label {
-    right: -80px;
-  }
-
-  .flip-clock-divider.minutes .flip-clock-label {
-    right: -87px;
-  }
-
-  .tournament-time-box .timer-area {
-    padding: 50px 30px 55px;
-  }
-
-  .testimonial .single-testimonial .people .title {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
-  .marketing-tools .single-tools .content .title {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
-  .how-play {
-    padding: 112px 0px 571px;
-  }
-
-  .features.about-page {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .sorteo-accordion .card-header .btn-link.collapsed::before,
-  .sorteo-accordion .card-header .btn-link::before {
-    display: none;
-  }
-
-  .sorteo-accordion .card-body {
-    margin-top: 10px;
-    padding: 16px 30px 8px;
-  }
-
-  .sorteo-accordion .card-body p {
-    font-size: 14px;
-  }
-
-  .sorteo-accordion .card-header .btn-link {
-    display: block;
-    position: relative;
-  }
-
-  .sorteo-accordion .card-header .btn-link i {
-    display: inline-block;
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .sorteo-accordion .card-header .btn-link {
-    padding: 17px 10px 17px 70px;
-  }
-
-  .login-modal .modal-dialog .modal-content .modal-body .logo-area::after {
-    display: none;
-  }
-
-  .login-modal .modal-dialog .modal-content .modal-body .logo-area {
-    padding-top: 30px;
-  }
-
-  .login-modal .modal-dialog .modal-content .modal-body .navbar-container -area {
-    padding: 16px 30px 10px;
-  }
-
-  .login-modal .modal-dialog .modal-content .modal-body .navbar-container -area .sub-title {
-    font-size: 20px;
-    line-height: 30px;
-  }
-
-  .login-modal .modal-dialog .modal-content .modal-body .form-footer p {
-    font-size: 16px;
-  }
-
-  .login-modal .modal-dialog .modal-content .modal-body .form-area .form-group .box {
-    display: flow-root;
-  }
-
-  .login-modal .modal-dialog .modal-content .modal-body .form-area {
-    padding: 0px 20px 10px;
-  }
-
-  .login-modal .modal-dialog .modal-content .modal-body .navbar-container -area {
-    padding: 16px 20px 10px;
-  }
-
-  .login-modal .modal-dialog .modal-content .modal-body .form-footer {
-    padding: 0px 20px 6px;
-  }
 
   .section-heading .subtitle {
     font-size: 18px;
     line-height: 28px;
-  }
-
-  .single-winer .top-area .left .name,
-  .single-winer .bottom-area .left,
-  .play-games .gaming-activities .gaming-activities-inner .single-activities .top-area .right .title,
-  .tournaments .info-table .main-box .info-content .info-box .title,
-  .tournament-time-box .top-area .title,
-  .tournament-time-box .timer-area .title,
-  .team .team-members .team-member-inner .single-team .image .content .name,
-  .single-process .title,
-  .affiliate-program .single-program .content .title,
-  .marketing-tools .single-tools .content .title,
-  .testimonial .single-testimonial .people .title,
-  .single-awards .content .title,
-  .community-blog .single-box .content .title,
-  .single-bonus .content .title,
-  .single-deposit-bonus .content .title,
-  .single-h-play .title,
-  .help-section .help-box .help-box-inner2-hearer .title,
-  .help-section .help-box .help-box-inner2 .single-artical .content .title,
-  .help-section.writter-artical-details .help-box .help-box-inner2 .single-artical .writer-profile .writer-content .w-name,
-  .help-section.writter-artical-details .help-box .help-box-inner2 .single-artical .inner-content .title,
-  .help-section.writter-artical-details .help-box .help-box-inner2 .single-artical .footer-content .heading,
-  .contact .contact-form-wrapper .contact-box .title,
-  .how-it-work .single-work .title,
-  .lottery-area .lottery-staticstics .single-staticstics .right .count span,
-  .lottery-area .daily-lottery .draw-time .subtitle {
-    font-size: 20px;
-    line-height: 30px;
-  }
-
-  .help-section.writter-artical-details .help-box .help-box-inner2 .single-artical .inner-content p {
-    font-size: 20px;
-    font-weight: 300;
-  }
-
-  .help-section .help-box .help-box-inner3-hearer .title,
-  .help-section.writter-artical-details .help-box .help-box-inner2 .single-artical .top-title {
-    font-size: 24px;
-    line-height: 34px;
-  }
+  } 
 
   .breadcrumb-area .title {
     font-size: 30px;
     line-height: 40px;
   }
 
-  .lottery-video .video-box {
-    height: 400px;
-  }
 
-  .cart-area .cart-table-area .table {
-    width: 900px;
-  }
-
-  .team .team-members .team-member-inner .single-team .image .content .designation {
-    font-size: 16px;
-    line-height: 26px;
-  }
-
-  .activities .table {
-    width: 800px;
-  }
-
-  .index2 .hero-area {
-    padding: 232px 0px 264px;
-  }
-
-  .footer .footer-widget .title {
-    font-size: 22px;
-    line-height: 32px;
-  }
-
-  .play-games .gaming-activities .gaming-activities-inner .single-activities .top-area {
-    text-align: center;
-  }
-
-  .play-games .gaming-activities .gaming-activities-inner .single-activities .bottom-area {
-    text-align: center;
-  }
 
   .lottery-area .lottery-staticstics .single-staticstics {
     padding: 30px 30px 30px;
@@ -642,127 +214,8 @@
     background-color: rgba(29, 40, 80, 0.6);
   }
 
-  .question-area .section-heading .title {
-    margin-bottom: 18px;
-  }
-
-  .tournaments .info-table .main-box .inner-table-content .table {
-    width: 670px;
-  }
-
-  .about-page-section .about-video .play-video {
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-  }
-
-  .about-page-section .section-heading {
-    margin-top: 50px;
-  }
-
-  .help-section .help-box .help-box-inner .title {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
-  .single-game img,
-  .single-bonus .content img {
-    animation: unset;
-  }
-
-
-
-
 }
 
-
-
-@media (max-width: 500px) {
-  .flip-clock-wrapper ul {
-    width: 28px;
-    height: 33px;
-  }
-
-  .flip-clock-wrapper ul li a div.up:after {
-    top: 29px;
-    background-color: rgba(255, 255, 255, 0.4);
-  }
-
-  .flip-clock-wrapper ul li a div div.inn {
-    font-size: 20px;
-    line-height: 35px;
-  }
-
-  .flip-clock-dot.top {
-    top: 10px;
-  }
-
-  .flip-clock-divider {
-    height: 57px;
-  }
-
-  .flip-clock-divider .flip-clock-label {
-    right: -74px;
-  }
-
-  .flip-clock-divider {
-    width: 10px;
-  }
-
-  .flip-clock-dot {
-    width: 5px;
-    height: 5px;
-    left: 2px;
-  }
-
-  .flip-clock-wrapper ul {
-    margin: 2px;
-  }
-
-  .flip-clock-divider .flip-clock-label {
-    bottom: -18px;
-    right: -46px;
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
-
-  .flip-clock-divider.hours .flip-clock-label {
-    right: -51px;
-  }
-
-  .flip-clock-divider.minutes .flip-clock-label {
-    right: -59px;
-  }
-
-  .tournament-time-box .timer-area {
-    padding: 50px 30px 50px;
-  }
-
-  .tournament-time-box .top-area .title {
-    font-size: 20px;
-    line-height: 30px;
-  }
-
-  .tournament-time-box .top-area .sub-title {
-    font-size: 16px;
-    line-height: 26px;
-  }
-
-  .tournament-time-box .top-area .status {
-    font-size: 12px;
-    height: 22px;
-    line-height: 22px;
-    left: -70px;
-    top: 14px;
-  }
-
-
-
-
-
-
-
-}
 
 
 @media (max-width: 469px) {}
@@ -778,126 +231,26 @@
     right: -14px;
   }
 
-  .activities .tab-menu-area .nav-lend {
-    border-radius: 10px;
-  }
-
-  .footer .subscribe-box .heading-area .title {
-    font-size: 30px;
-    line-height: 40px;
-  }
-
-  .single-game img {
-    max-width: 150px;
-  }
-
-  .single-game {
-    height: 280px;
-    line-height: 280px;
-  }
-
   .lottery-area .daily-lottery .draw-time .draw-counter,
   .lottery-area .daily-lottery .draw-time .draw-counter span {
     font-size: 24px !important;
     line-height: 34px !important;
   }
 
-  .help-section .help-box .help-box-inner2 .single-artical .writer-profile {
-    display: flow-root;
-    text-align: center;
-  }
-
-  .help-section .help-box .help-box-inner2 .single-artical .writer-profile img {
-    margin-right: 0px;
-    margin-bottom: 20px;
-  }
-
-  .help-section .help-box .help-box-inner2 .single-artical {
-    text-align: center;
-  }
-
-  .serch-area .serch-box {
-    padding: 20px 30px 40px;
-  }
-
-  .help-section.writter-artical-details .help-box .help-box-inner2 .single-artical .writer-profile {
-    display: flow-root;
-  }
-
-  .help-section.writter-artical-details .help-box .help-box-inner2 .single-artical .writer-profile img {
-    margin-right: 0px;
-  }
-
-  .features .single-feature .icon,
-  .affiliate-program .single-program .icon {
-    width: 100px;
-    height: 100px;
-  }
-
-  .features .single-feature .icon img,
-  .affiliate-program .single-program .icon img {
-    width: 40px;
-  }
-
-  .features .single-feature .icon.one,
-  .features .single-feature .icon.two,
-  .features .single-feature .icon.three,
-  .features .single-feature .icon.four,
-  .features .single-feature .icon.four,
-  .features .single-feature .icon.five,
-  .features .single-feature .icon.six,
-  .affiliate-program .single-program .icon.one,
-  .affiliate-program .single-program .icon.two,
-  .affiliate-program .single-program .icon.three,
-  .affiliate-program .single-program .icon.four,
-  .affiliate-program .single-program .icon.four,
-  .affiliate-program .single-program .icon.five,
-  .affiliate-program .single-program .icon.six {
-    line-height: 80px;
-  }
-
+ 
   .section-heading .title {
     font-size: 26px;
     line-height: 36px;
   }
 
-  .footer .subscribe-box .heading-area .title {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
-  .hero-area .left-content .content .title {
-    font-size: 30px;
-    line-height: 40px;
-  }
-
-  .hero-area .left-content .content .subtitle {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
-  .hero-area .mybtn1 {
-    font-size: 14px;
-    padding: 9px 20px;
-  }
+  
 
   .breadcrumb-area .title {
     font-size: 24px;
     line-height: 34px;
   }
 
-  .sorteo-accordion .card-header .btn-link {
-    font-size: 16px;
-  }
-
-  .breadcrumb-area.play {
-    padding: 232px 0px 218px;
-  }
-
-  .breadcrumb-area.bc-tournaments {
-    padding: 232px 0px 94px;
-  }
-
+  
   .breadcrumb-area.bc-lottery {
     padding: 232px 0px 152px;
   }
@@ -918,31 +271,6 @@
     padding: 232px 0px 96px;
   }
 
-  .breadcrumb-area.cart {
-    padding: 232x 0px 94px;
-  }
-
-  .breadcrumb-area.bc-faq {
-    padding: 232px 0px 95px;
-  }
-
-  .breadcrumb-area.h-i-w {
-    padding: 232px 0px 93px;
-  }
-
-  .breadcrumb-area.bc-terms {
-    padding: 232px 0px 150px;
-  }
-
-  .breadcrumb-area.bc-contact {
-    padding: 232px 0px 94px;
-  }
-
-
-
-
-
-
 
 }
 
@@ -954,23 +282,6 @@
   }
 
 
-  .tournament-time-box .timer-area {
-    padding: 50px 20px 50px;
-  }
-
-  .payment-method .method-slider {
-    padding: 0px 40px;
-  }
-
-  .community-blog .single-box {
-    display: flow-root;
-  }
-
-  .community-blog .single-box .img {
-    margin-right: 0px;
-    margin-bottom: 22px;
-  }
-
   .navbar-container .top-header .content .right-content .right-list>li .cart-icon.tm-dropdown .tm-dropdown-menu {
     position: absolute;
     top: 100%;
@@ -980,42 +291,14 @@
     transform: translateX(-30%);
   }
 
-  .footer .subscribe-box .form-area input {
-    font-size: 14px;
-  }
-
-  .footer .subscribe-box .icon {
-    display: none;
-  }
-
-  .footer .subscribe-box .col-8 {
-    max-width: 100% !important;
-    flex: 100% !important;
-  }
-
-  .footer .subscribe-box .heading-area .title {
-    margin-bottom: 32px;
-  }
-
-  .lottery-area .buy-tickets .buy-tickets-box .content {
-    padding: 20px 15px 20px;
-  }
+ 
 
 }
 
 
 @media (max-width: 343px) {
-  .index2 .hero-area {
-    padding: 258px 0px 264px;
-  }
+  
 
-  .hero-area {
-    padding: 258px 0px 265px;
-  }
-
-  .breadcrumb-area.play {
-    padding: 257px 0px 218px;
-  }
 
   .breadcrumb-area.bc-lottery {
     padding: 257px 0px 218px;

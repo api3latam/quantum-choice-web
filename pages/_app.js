@@ -6,6 +6,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/bootstrap.min.css'
 import '../styles/responsive.css'
+import { useState, useEffect } from 'react';
+import Script from 'next/script'
+
 config.autoAddCss = false
 
 import { Web3ReactProvider } from '@web3-react/core';
@@ -17,6 +20,9 @@ function getLibrary(provider, connector) {
 
 
 function MyApp({ Component, pageProps }) {
+    useEffect(()=>{
+    import("bootstrap/dist/js/bootstrap");
+    },[])
   return (
      <Web3ReactProvider getLibrary={getLibrary}>
       <Component {...pageProps} />

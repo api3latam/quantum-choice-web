@@ -3,9 +3,11 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { injected } from '../components/wallet/connectors'
+import BannerSingleItem from '../components/bannerSingleItem'
 
 const Banner = () => {
-  
+  const singleItem1 ={image:'/images/banner/NFTs.png'}
+ 
   const { active, account, activate, deactivate } =
     useWeb3React();
 
@@ -52,11 +54,21 @@ const Banner = () => {
               <div class="col-lg-12">
                 <h4 class="title">Quantum Choice</h4>
                 <ul class="breadcrumb-list">
+                  
                   {active ? (  <li>
                     <a  href="#" class="btnsi ml-auto" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
                   </li>):(  <li>
                     <a  href="#" class="btnsi ml-auto" onClick={connect} data-toggle="modal"> Connect wallet</a>
                   </li>)}
+
+                  <li>
+                    <div className="slider float-right">
+                    <div className="bannerItems">
+                      <BannerSingleItem data={singleItem1}/>
+                    </div>
+                 
+                    </div>
+                  </li>
                 </ul>
                 {active ? (
                   <p className="h2 text-white">

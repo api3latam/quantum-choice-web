@@ -25,6 +25,7 @@ p {
 }
 
 .btnsi {
+  text-decoration: none;
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 600;
@@ -76,7 +77,7 @@ p {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.navbar-container.nav-fixed .top-navbar {
+.navbar-container .nav-fixed .top-header {
   display: none;
 }
 
@@ -88,17 +89,17 @@ p {
   visibility: hidden;
 }
 
-.navbar-container .top-navbar {
+.navbar-container .top-header {
   background: transparent;
 }
-.navbar-container .top-navbar .right-content .sign-in a {
+.navbar-container .top-header .right-content .sign-in a {
   text-decoration: none;
   color: #ffff;
   font-size: 16px !important;
   line-height: 20px !important;
 }
 
-.navbar-container .top-navbar .content {
+.navbar-container .top-header .content {
   display: -webkit-box;
   display: -ms-flexbox;
   -webkit-box-pack: justify;
@@ -107,7 +108,7 @@ p {
   padding: 13px 0px 13px;
 }
 
-.navbar-container .top-navbar .content  {
+.navbar-container .top-header .content  {
   text-align: right;
 }
 
@@ -342,9 +343,80 @@ p {
   margin-bottom: 26px;
 }
 
-.breadcrumb-area .breadcrumb-list li {
+.slideBanner {  
+  margin-right:5px ;
+}
+
+.slideBanner .numberPos{
+  color: #BC923A;
+  margin-right:10px ;
+}
+.slideBanner .numberPos h5{
+  font-family: 'Modeco';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.08em;
+}
+
+.slideBanner .itemImageBanner{  
+      width: 150px;
+      height: 150px;
+      line-height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 2px solid #BC923A;
+      background: #000000;
+      margin-top: -25px;
+      margin-right: 10px;
+}
+
+.slideBanner .timeItemPart{
+  padding: 10px 0px;
+  color: #FFF;
+}
+.slideBanner .timeItemPart h5 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+.slideBanner .buttonItemPart{
+  text-align: center;
+}
+
+.slideBanner .buttonItemPart .btnsi{
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+
+.breadcrumb-area .breadcrumb-list  { 
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 0;
+  padding-right: 0px;
+  padding-top: 50px;
+}
+.breadcrumb-area .breadcrumb-list li {  
   display: inline-block;
 }
+
+.breadcrumb-area .breadcrumb-list .slider {  
+  display: inline-flex;  
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
 
 .breadcrumb-area .breadcrumb-list li span {
   margin: 0px 7px;
@@ -560,6 +632,10 @@ html body .lottery-area .daily-lottery .draw-time #subtitleid[style] {
 
 .lottery-area .daily-lottery .draw-time .draw-counter span:last-child {
   margin-right: 0px;
+}
+
+.lottery-area .daily-lottery .image-daily-lottery {
+  padding: 20px 0px ;
 }
 
 .latest-area {

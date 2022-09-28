@@ -50,7 +50,9 @@ const Navbar = () => {
                                             </li>
 
                                         </ul>
-                                        <a  href="#" class="btnsi ml-auto" data-toggle="modal" data-target="#signin"> Join us</a>
+                                        <div className='float-right'>
+                                            <a  href="#" class="btnsi ml-2" > Join us</a>
+                                        </div>
                                     </div>
                                 </nav>
                                
