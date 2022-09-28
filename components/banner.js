@@ -157,14 +157,16 @@ const Banner = () => {
                 </div>
               </div>
             </div>
-            <div class="row">
+             <div class="row">
               <div class="col-lg-12">
                 <div class="draw-time">
                   <div class="subtitle" id="subtitleid">Lottery Draw Starts In:</div>
                   <div class="draw-counter">
                     <div>00D : 00H : 00M : 00S</div>
                   </div>
-                  <div class="text">To meet Today's challenges</div>
+                  <div className="image-daily-lottery">
+                    <img src="/images/banner/Logo-QRNG.png" alt="image counter" />
+                  </div>
                 </div>
               </div>
             </div>
