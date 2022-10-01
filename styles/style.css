@@ -177,7 +177,9 @@ p {
   justify-content: center;
 }
 
-
+.navbar-area{
+  padding: 1.2rem;
+}
 /*
 
 .navbar-container  .navbar-area .navbar #navbarTogglerDemo01  {

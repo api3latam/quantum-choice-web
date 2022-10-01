@@ -11,41 +11,6 @@ const Banner = () => {
     const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
 
   
-  const { active, account, activate, deactivate } =
-    useWeb3React();
-
-  async function connect() {
-    try {
-      await activate(WalletConnect);
-      localStorage.setItem("isWalletConnected", true);
-    } catch (ex) {
-      console.log(ex);
-    }
-  }
-
-  async function disconnect() {
-    try {
-      deactivate();
-      localStorage.setItem("isWalletConnected", false);
-    } catch (ex) {
-      console.log(ex);
-    }
-  }
-
-  useEffect(() => {
-    const connectWalletOnPageLoad = async () => {
-      if (localStorage?.getItem("isWalletConnected") === "true") {
-        try {
-          await activate(injected);
-          localStorage.setItem("isWalletConnected", true);
-        } catch (ex) {
-          console.log(ex);
-        }
-      }
-    };
-    connectWalletOnPageLoad();
-  }, []);
-  
   return (
     <div>
       <div className="banner-area">
@@ -57,18 +22,6 @@ const Banner = () => {
               <div class="col-lg-12">
                 <h4 class="title">Quantum Choice</h4>
                 <ul class="breadcrumb-list">
-                    
-                  {active ? (  <li>
-                    <a  href="#" class="btnsi ml-auto" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
-                    <p className="h2 text-white">
-                        Connected with <b>{account}</b>
-                      </p>
-                  </li>):(  <li>
-                    <a  href="#" class="btnsi ml-auto" onClick={connect} data-toggle="modal"> Connect wallet</a>
-                     <p className="h2 text-white">
-                        Not connected
-                      </p>
-                  </li>)}
 
                 </ul>
              

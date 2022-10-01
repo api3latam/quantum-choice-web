@@ -11,40 +11,6 @@ const Banner = () => {
   const [imageUrl, setImageUrl] = useState('/images/banner/NFTs.png');
   const singleItem1 ={image:imageUrl}
  
-  const { active, account, activate, deactivate } =
-    useWeb3React();
-
-  async function connect() {
-    try {
-      await activate(WalletConnect);
-      localStorage.setItem("isWalletConnected", true);
-    } catch (ex) {
-      console.log(ex);
-    }
-  }
-
-  async function disconnect() {
-    try {
-      deactivate();
-      localStorage.setItem("isWalletConnected", false);
-    } catch (ex) {
-      console.log(ex);
-    }
-  }
-
-  useEffect(() => {
-    const connectWalletOnPageLoad = async () => {
-      if (localStorage?.getItem("isWalletConnected") === "true") {
-        try {
-          await activate(injected);
-          localStorage.setItem("isWalletConnected", true);
-        } catch (ex) {
-          console.log(ex);
-        }
-      }
-    };
-    connectWalletOnPageLoad();
-  }, []);
   
   return (
     <div>
@@ -58,17 +24,6 @@ const Banner = () => {
                 <h4 class="title">Quantum Choice</h4>
                 <ul class="breadcrumb-list">
                   
-                  {active ? (  <li>
-                    <a  href="#" class="btnsi ml-auto" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
-                    <p className="h2 text-white">
-                        Connected with <b>{account}</b>
-                      </p>
-                  </li>):(  <li>
-                    <a  href="#" class="btnsi ml-auto" onClick={connect} data-toggle="modal"> Connect wallet</a>
-                     <p className="h2 text-white">
-                        Not connected
-                      </p>
-                  </li>)}
 
                   <li>
                     <div className="slider p-4">
