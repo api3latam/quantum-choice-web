@@ -83,7 +83,7 @@ const LatestActivites = () => {
 											</div>
 											
 											<div className="btnsi"  >
-												<h1 style={{ 'font-size': '5vw'}}>Try Again</h1>
+												<h1 style={{ 'font-size': '5vw !important'}}>Try Again</h1>
 											</div>  
 										</div>
 										

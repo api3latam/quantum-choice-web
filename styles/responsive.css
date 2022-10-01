@@ -37,7 +37,21 @@
 
 @media (max-width: 991px) {
 
-  .navbar-container .navbar-area .navbar #main_menu .navbar-nav .nav-item .nav-link .mr-hover-effect {
+  
+
+  .navbar-container  .navbar-area .navbar .navbar-brand{
+    padding-top: 10px;
+  }
+
+  .navbar-toggler {
+    color: #FFDF94;
+    background-color: transparent;
+    border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
+}
+
+
+
+  .navbar-container  .navbar-area .navbar #navbarTogglerDemo01 .navbar-nav .nav-item  .nav-link .mr-hover-effect {
     display: none;
   }
 
@@ -58,6 +72,12 @@
   .navbar-container .navbar-area .navbar {
     padding: 8px 0px;
 
+  }
+
+  .navbar-container .navbar-area .navbar #navbarTogglerDemo01 .navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .section-heading .subtitle {

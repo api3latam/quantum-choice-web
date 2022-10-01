@@ -8,7 +8,7 @@ import { WalletConnect } from "../components/wallet/connectors";
 const Banner = () => {
   /**State for image url */
   /**TODO: Replace with NFT Url */
-    const [imageUrl, setImageUrl] = useState('https://cdn3.f-cdn.com/contestentries/1233731/27978425/5a61f080ea253_thumb900.jpg');
+    const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
 
   
   const { active, account, activate, deactivate } =
