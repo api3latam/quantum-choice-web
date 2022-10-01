@@ -12,27 +12,38 @@ const Banner = () => {
   /**TODO: Replace with NFT Url */
     const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
 
-    const [addy, setAddy] = useState('');
 
-    //Function to get the current user's address from local storage
-    const getAddy = () => {
-        const addy = localStorage.getItem('address');
-        setAddy(addy);
-    }
-
+    //Function to get the current user's address
+    const { active, account, activate, deactivate } =
+        useWeb3React();
+    
+    
     //Add the current user's address to the database
     const addAddress = () => {
+        /**TODO:
+         * Change alerys with proper UI
+         * Add a check to see if the address is already in the database
+         * Verify with Giancarlo the proper init of the record
+         */
+
         //check if wallet is connected
         if (localStorage?.getItem("isWalletConnected") === "true") {
             //get the current user's address
-            getAddy();
-            //add the address to the database
-            firestore.collection('address').doc(addy).set({
-                address: addy
+            console.log("WALLET", account);
+            //add the address to the database with random doc id
+            firestore.collection("users").doc(account).set({
+                address: account,
             })
+            .then(() => {
+                alert("Document successfully written!");
+            })
+            .catch((error) => {
+                alert("Error writing document: ", error);
+            });
         }
         else{
-            console.log("Wallet not connected");
+            //popup to connect wallet
+            alert("Please connect your wallet to continue");
         }
     }
 
@@ -60,7 +71,7 @@ const Banner = () => {
                   <img src={imageUrl} alt="" width={300} height={300}/>
                 </div>
                 </div>
-                  <button class="btnsi ml-auto" > MINT NFT</button>
+                  <button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>
             </div>
           </div>
         </section>
