@@ -5,12 +5,39 @@ import { useWeb3React } from '@web3-react/core'
 import { injected } from '../components/wallet/connectors'
 import { WalletConnect } from "../components/wallet/connectors";
 
+import {firestore} from '../utils/firebase';
+
 const Banner = () => {
   /**State for image url */
   /**TODO: Replace with NFT Url */
     const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
 
-  
+    const [addy, setAddy] = useState('');
+
+    //Function to get the current user's address from local storage
+    const getAddy = () => {
+        const addy = localStorage.getItem('address');
+        setAddy(addy);
+    }
+
+    //Add the current user's address to the database
+    const addAddress = () => {
+        //check if wallet is connected
+        if (localStorage?.getItem("isWalletConnected") === "true") {
+            //get the current user's address
+            getAddy();
+            //add the address to the database
+            firestore.collection('address').doc(addy).set({
+                address: addy
+            })
+        }
+        else{
+            console.log("Wallet not connected");
+        }
+    }
+
+
+
   return (
     <div>
       <div className="banner-area">
@@ -33,7 +60,7 @@ const Banner = () => {
                   <img src={imageUrl} alt="" width={300} height={300}/>
                 </div>
                 </div>
-                  <a  href="#" class="btnsi ml-auto"  data-toggle="modal"> MINT NFT</a>
+                  <button class="btnsi ml-auto" > MINT NFT</button>
             </div>
           </div>
         </section>

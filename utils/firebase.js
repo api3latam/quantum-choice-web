@@ -18,6 +18,8 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
+
+
 // Auth exports
 export const auth = firebase.auth();
 
