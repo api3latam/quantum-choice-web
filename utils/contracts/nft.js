@@ -1,7 +1,9 @@
 import { getContracts } from ".";
+import { convertLinkToIpfs } from "../misc";
 
-export async function generateToken(targetAddress) {
+export async function getTokenUri(targetId) {
     const { nft } = await getContracts();
 
-    await nft.requestToken(targetAddress);
+    const url = await nft.tokenURI(targetId);
+    return convertLinkToIpfs(url);
 };
