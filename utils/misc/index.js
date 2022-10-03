@@ -1,4 +1,4 @@
-export * from "./json";
+export * from "./ipfs";
 export * from "./signer";
 
 export const networkIds = {
