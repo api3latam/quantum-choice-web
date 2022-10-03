@@ -1,7 +1,6 @@
 import { Wallet, providers } from "ethers";
 
 export async function getSigner(networkName) {
-    require('dotenv').config();
 
     const provider = providers.AlchemyProvider(
         networkName !== undefined ? networkName : "goerli", 

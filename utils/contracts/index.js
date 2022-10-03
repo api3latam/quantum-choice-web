@@ -1,13 +1,12 @@
 import { Contract } from "ethers";
-import { getSigner, loadJson } from "../misc";
+import { getSigner } from "../misc";
 
-const nftAbi = loadJson('public/abis/nft.json');
-const raffleAbi = loadJson("public/abis/raffle.json");
+const nftAbi = require("../../public/abis/nft");
+const raffleAbi = require("../../public/abis/nft");
 
 function getAddresses() {
-    const addresses = loadJson("public/addresses.json");
-    return { nftAddress: addresses['nft'],
-            raffleAddress: addresses['raffle']
+    return { nftAddress: "",
+            raffleAddress: ""
         };
 };
 
