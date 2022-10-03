@@ -3,7 +3,8 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useState} from 'react'
 import { useWeb3React } from '@web3-react/core'
 
-import { networkIds } from "../utils/misc";
+import { networkIds,
+      getImageUrl } from "../utils/misc";
 import { setAddress,
       getTokenStatus } from '../utils/firebase';
 
@@ -13,19 +14,21 @@ const Banner = () => {
 
   // Function to get the current user's address
   const { active, account,
+    library,
     chainId } = useWeb3React();
 
   if (active) {
     const network = networkIds[chainId];
     const tokenData = getTokenStatus(account, network)
     if (tokenData) {
-      setImageUrl(tokenData[-1]);
+      const tokenToSet = getImageUrl(tokenData[-1]['id']);
+      setImageUrl(tokenToSet);
     }
   };
     
   // Add the current user's address to the database
   const addAddress = () => {
-      // TODO: Change alerys with proper UI
+      // TODO: Change alerys with proper UI. Add metamask sign.
       // Check if wallet is connected
       if (localStorage?.getItem("isWalletConnected") === "true") {
           // Add the address to the database

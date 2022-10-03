@@ -11,3 +11,8 @@ export const convertLinkToIpfs = (inputURI) => {
       return inputURI;
     }
   };
+
+export const getImageUrl = async (inputUrl) => {
+  const fetched = JSON.parse(await fetch(inputUrl));
+  return fetched['image_url'];
+}
