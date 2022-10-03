@@ -1,6 +1,10 @@
 import { firestore } from ".";
 import { getTokenUri } from "../contracts";
 
+/**
+ * @notice Creates a register for new users on the page.
+ * @param userAddress The address from the user.
+ */
 export async function setAddress(userAddress) {
     try {
         // Add a check to see if the address is already in the database
@@ -20,6 +24,14 @@ export async function setAddress(userAddress) {
     }
 }
 
+/**
+ * @notice Returns an array with the URIs from the 
+ * tokens owned by the user at the specified network.
+ * @dev If the user have no owned token then returns 
+ * default value or empty.
+ * @param userAddress The address from the user.
+ * @param networkName The network which the user is at.
+ */
 export async function getTokenStatus(
     userAddress,
     networkName
@@ -35,8 +47,13 @@ export async function getTokenStatus(
                 .get(`network.${networkName}`)
             const tokenUris = 
                 tokenIds.length > 1
-                ? tokenIds.map(getTokenUri)
-                : getTokenUri(tokenIds[0]);
+                ? tokenIds.map(token => {
+                    const individualUri = getTokenUri(token['id']);
+                    const isShinny = token['isShinny'];
+                    return { id: individualUri, shinny: isShinny };
+                })
+                : [ { id: getTokenUri(tokenIds[0]['id']),
+                        shinny: tokenIds[0]['isShinny'] } ];
             return tokenUris;
         } else {
             // Add alert or default image for loading

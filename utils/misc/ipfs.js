@@ -1,3 +1,7 @@
+/**
+ * @notice Normalizes ipfs URIs into browser compatible URLs.
+ * @param inputURI The raw URI from ipfs sources.
+ */
 export const convertLinkToIpfs = (inputURI) => {
     if (inputURI.includes("ipfs://")) {
       return (

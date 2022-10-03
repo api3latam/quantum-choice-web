@@ -1,52 +1,41 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { useEffect, useState} from 'react'
+import { useState} from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { injected } from '../components/wallet/connectors'
-import { WalletConnect } from "../components/wallet/connectors";
 
-import {firestore} from '../utils/firebase';
+import { networkIds } from "../utils/misc";
+import { setAddress,
+      getTokenStatus } from '../utils/firebase';
 
 const Banner = () => {
   /**State for image url */
-  /**TODO: Replace with NFT Url */
-    const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
+  const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
 
+  // Function to get the current user's address
+  const { active, account,
+    chainId } = useWeb3React();
 
-    //Function to get the current user's address
-    const { active, account, activate, deactivate } =
-        useWeb3React();
-    
-    
-    //Add the current user's address to the database
-    const addAddress = () => {
-        /**TODO:
-         * Change alerys with proper UI
-         * Add a check to see if the address is already in the database
-         * Verify with Giancarlo the proper init of the record
-         */
-
-        //check if wallet is connected
-        if (localStorage?.getItem("isWalletConnected") === "true") {
-            //get the current user's address
-            console.log("WALLET", account);
-            //add the address to the database with random doc id
-            firestore.collection("users").doc(account).set({
-                address: account,
-            })
-            .then(() => {
-                alert("Document successfully written!");
-            })
-            .catch((error) => {
-                alert("Error writing document: ", error);
-            });
-        }
-        else{
-            //popup to connect wallet
-            alert("Please connect your wallet to continue");
-        }
+  if (active) {
+    const network = networkIds[chainId];
+    const tokenData = getTokenStatus(account, network)
+    if (tokenData) {
+      setImageUrl(tokenData[-1]);
     }
-
+  };
+    
+  // Add the current user's address to the database
+  const addAddress = () => {
+      // TODO: Change alerys with proper UI
+      // Check if wallet is connected
+      if (localStorage?.getItem("isWalletConnected") === "true") {
+          // Add the address to the database
+          setAddress(account);
+      }
+      else {
+          // Popup to connect wallet
+          alert("Please connect your wallet to continue");
+      }
+  };
 
 
   return (

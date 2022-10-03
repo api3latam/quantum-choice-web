@@ -6,13 +6,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/bootstrap.min.css'
 import '../styles/responsive.css'
-import { useState, useEffect } from 'react';
-import Script from 'next/script'
+import { useEffect } from 'react';
 
 config.autoAddCss = false
 
 import { Web3ReactProvider } from '@web3-react/core';
-import { providers } from "ethers";
 
 import { Web3Provider } from "@ethersproject/providers";
 
