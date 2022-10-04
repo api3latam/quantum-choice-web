@@ -1,6 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Script from "next/script"
 
@@ -10,12 +9,14 @@ import { injected } from '../components/wallet/connectors'
 import { WalletConnect } from "../components/wallet/connectors";
 
 const Navbar = () => {
+    const [networkId, setNetworkId] = useState(137);
+
     const { active, account, activate, deactivate } =
         useWeb3React();
 
     async function connect() {
         try {
-        await activate(WalletConnect);
+        await activate(WalletConnect(networkId));
         localStorage.setItem("isWalletConnected", true);
         } catch (ex) {
         console.log(ex);
