@@ -31,19 +31,19 @@ const Navbar = () => {
         }
     }
 
-    useEffect(() => {
-        const connectWalletOnPageLoad = async () => {
-        if (localStorage?.getItem("isWalletConnected") === "true") {
-            try {
-            await activate(injected);
-            localStorage.setItem("isWalletConnected", true);
-            } catch (ex) {
-            console.log(ex);
-            }
-        }
-        };
-        connectWalletOnPageLoad();
-    }, []);
+    // useEffect(() => {
+    //     const connectWalletOnPageLoad = async () => {
+    //     if (localStorage?.getItem("isWalletConnected") === "true") {
+    //         try {
+    //         await activate(WalletConnect);
+    //         localStorage.setItem("isWalletConnected", true);
+    //         } catch (ex) {
+    //         console.log(ex);
+    //         }
+    //     }
+    //     };
+    //     connectWalletOnPageLoad();
+    // }, []);
 
     return (
         <React.Fragment>
@@ -79,12 +79,12 @@ const Navbar = () => {
                                                 <div className="mr-hover-effect"></div></a>
                                         </li>
                                          {active ? (  <li>
-                                            <a  href="#" class="btnsi ml-auto" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
+                                            <a  href="#" class="btnsi ml-auto wallet-btn" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
                                             <p className="h2 text-white">
                                                 Connected with <b>{account}</b>
                                             </p>
                                         </li>):(  <li>
-                                            <a  href="#" class="btnsi ml-auto" onClick={connect} data-toggle="modal"> Connect wallet</a>
+                                            <a  href="#" class="btnsi ml-auto wallet-btn" onClick={connect} data-toggle="modal"> Connect wallet</a>
                                             <p className="h2 text-white">
                                                 Not connected
                                             </p>
