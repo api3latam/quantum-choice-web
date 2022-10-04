@@ -187,8 +187,7 @@ const LatestActivites = () => {
 
 		<div className="attribution">
 				<a target="_blank" rel="noopener noreferrer" href="https://api3.org/qrng">
-					<img src="https://api3.org/img/quantum-random-numbers/embed-badges/Type=Black, Size=Medium.png" width="190" height="80" />
-				</a>
+					<img src="images/banner/banner-qrng1.png" width="100" height="65" />				</a>
 			</div>
 		</div>
 	);
