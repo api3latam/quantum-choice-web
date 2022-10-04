@@ -7,12 +7,12 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBSJpJo7ua78JpXvaqoAGpBxwIFrBE5Pu0",
+  apiKey: process.env['NEXT_PUBLIC_FIREBASE_API'],
   authDomain: "quantum-choice.firebaseapp.com",
   projectId: "quantum-choice",
   storageBucket: "quantum-choice.appspot.com",
-  messagingSenderId: "520450701307",
-  appId: "1:520450701307:web:feeda79ac8c61b51a5bd5e",
+  messagingSenderId: ["NEXT_PUBLIC_FIREBASE_MESSAGE"],
+  appId: process.env["NEXT_PUBLIC_FIREBASE_ID"],
   measurementId: "G-2HP3ERTHWP"
 };
 
