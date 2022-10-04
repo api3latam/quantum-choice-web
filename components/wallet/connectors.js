@@ -1,23 +1,26 @@
 import { InjectedConnector } from '@web3-react/injected-connector';
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
+import { networkIds } from "../../utils/misc";
 
 /**
  * List of connectors
  * 5: Goerli
  * 1: ETH Mainnet
  * 137: Polygon mainnet
- * 80001: Matic Mumbai
  * 42161: Arbitrum
  * 30: RSK
- * 31: RSK Testnet
  * More: https://chainid.network/
  */
 export const injected = new InjectedConnector({
-  supportedChainIds: [1,5, 137, 80001, 42161, 30, 31],
+  supportedChainIds: [1,5, 137, 42161, 30],
 });
 
-export const WalletConnect = new WalletConnectConnector({
- rpcUrl: `https://eth-goerli.g.alchemy.com/v2/${process.env["NEXT_PUBLIC_GOERLI"]}`,
- bridge: "https://bridge.walletconnect.org",
- qrcode: true,
-});
+export const WalletConnect = (chainId) => {
+  const rpc = process.env[`NEXT_PUBLIC_${(networkIds[chainId]).toUpperCase()}`];
+
+  new WalletConnectConnector({
+    rpcUrl: rpc,
+    bridge: "https://bridge.walletconnect.org",
+    qrcode: true,
+  });
+}
