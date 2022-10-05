@@ -1,11 +1,9 @@
 import React from 'react';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Script from "next/script"
 
-import { useEffect, useState} from 'react'
+import { useState} from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { injected } from '../components/wallet/connectors'
 import { WalletConnect } from "../components/wallet/connectors";
 
 const Navbar = () => {
@@ -31,36 +29,6 @@ const Navbar = () => {
         console.log(ex);
         }
     }
-
-<<<<<<< HEAD
-    useEffect(() => {
-        const connectWalletOnPageLoad = async () => {
-        if (localStorage?.getItem("isWalletConnected") === "true") {
-            try {
-                await activate(injected);
-                localStorage.setItem("isWalletConnected", true);
-            } catch (ex) {
-            console.log(ex);
-            }
-        }
-        };
-        connectWalletOnPageLoad();
-    }, []);
-=======
-    // useEffect(() => {
-    //     const connectWalletOnPageLoad = async () => {
-    //     if (localStorage?.getItem("isWalletConnected") === "true") {
-    //         try {
-    //         await activate(WalletConnect);
-    //         localStorage.setItem("isWalletConnected", true);
-    //         } catch (ex) {
-    //         console.log(ex);
-    //         }
-    //     }
-    //     };
-    //     connectWalletOnPageLoad();
-    // }, []);
->>>>>>> 0296e8a34b72b5f2af219a4c01a15f5bc168f794
 
     return (
         <React.Fragment>
@@ -102,7 +70,7 @@ const Navbar = () => {
                                             </p>
                                         </li>):(  <li>
                                             <a  href="#" class="btnsi ml-auto wallet-btn" onClick={connect} data-toggle="modal"> Connect wallet</a>
-                                            <p className="h2 text-white">
+                                             <p className="h2 text-white">
                                                 Not connected
                                             </p>
                                         </li>)}
