@@ -1,27 +1,75 @@
 import { firestore } from ".";
 import { getTokenUri } from "../contracts";
 
+const networkQuerySetter = (networkName) => {
+    if (networkName === "rsk") {
+        return { rsk: false }
+    } else if (networkName === "polygon") {
+        return { polygon: false }
+    } else if (networkName === "ethereum") {
+        return { ethereum: false }
+    } else if (networkName === "arbitrum") {
+        return { arbitrum: false }
+    } else if (networkName === "goerli") {
+        return { goerli: false }
+    } else {
+        throw Error(`The given network ${networkName} is not available`);
+    }
+};
+
+const networkQueryAppend = (networkName) => {
+    if (networkName === "rsk") {
+        return { 'minted.rsk': false }
+    } else if (networkName === "polygon") {
+        return { 'minted.polygon': false }
+    } else if (networkName === "ethereum") {
+        return { 'minted.ethereum': false }
+    } else if (networkName === "arbitrum") {
+        return { 'minted.arbitrum': false }
+    } else if (networkName === "goerli") {
+        return { 'minted.goerli': false }
+    } else {
+        throw Error(`The given network ${networkName} is not available`);
+    }
+}
+
 /**
  * @notice Creates a register for new users on the page.
  * @param userAddress The address from the user.
+ * @param networkName The target name for the network
  */
-export async function setAddress(userAddress) {
+export async function setAddress(userAddress, networkName) {
     try {
-        // Add a check to see if the address is already in the database
-        await firestore
-                .collection("users")
-                .doc(userAddress)
-                .set({
-                    address: userAddress,
-                    minted: {
-                        polygon: false,
-                        rsk: false,
-                        arbitrum: false
-                    }
-                })
+        const alreadyExists = await verifyAddressExists(userAddress);
+        if (!alreadyExists) {
+            await firestore
+                    .collection("users")
+                    .doc(userAddress)
+                    .set({
+                        address: userAddress,
+                        minted: networkQuerySetter(networkName)
+                    });
+        } else if (alreadyExists) {; 
+            await firestore
+                    .collection("users")
+                    .doc(userAddress)
+                    .update(networkQueryAppend(networkName));
+        }
     } catch (err) {
         console.error(`Error writing document: ${err}`);
     }
+}
+
+/**
+ * @notice Checks wether a 
+ * @param address 
+ * @returns 
+ */
+async function verifyAddressExists(address) {
+    const doc = await firestore
+        .collection("users")
+        .doc(address);
+    return doc.exists;
 }
 
 /**

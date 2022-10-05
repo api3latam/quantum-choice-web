@@ -16,8 +16,8 @@ const Navbar = () => {
 
     async function connect() {
         try {
-        await activate(WalletConnect(networkId));
-        localStorage.setItem("isWalletConnected", true);
+            await activate(WalletConnect(networkId));
+            localStorage.setItem("isWalletConnected", true);
         } catch (ex) {
         console.log(ex);
         }
@@ -25,8 +25,8 @@ const Navbar = () => {
 
     async function disconnect() {
         try {
-        deactivate();
-        localStorage.setItem("isWalletConnected", false);
+            deactivate();
+            localStorage.setItem("isWalletConnected", false);
         } catch (ex) {
         console.log(ex);
         }
@@ -36,8 +36,8 @@ const Navbar = () => {
         const connectWalletOnPageLoad = async () => {
         if (localStorage?.getItem("isWalletConnected") === "true") {
             try {
-            await activate(injected);
-            localStorage.setItem("isWalletConnected", true);
+                await activate(injected);
+                localStorage.setItem("isWalletConnected", true);
             } catch (ex) {
             console.log(ex);
             }

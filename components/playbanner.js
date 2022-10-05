@@ -32,7 +32,8 @@ const Banner = () => {
       // Check if wallet is connected
       if (localStorage?.getItem("isWalletConnected") === "true") {
           // Add the address to the database
-          setAddress(account);
+          const network = networkIds[chainId];
+          setAddress(account, network);
       }
       else {
           // Popup to connect wallet
