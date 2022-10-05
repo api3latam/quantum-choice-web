@@ -10,10 +10,9 @@ export default function Dropdown() {
   const [network, setnetwork] = useState(137);
 
   useEffect(() => {
-    const networkId = localStorage.getItem("networkId");
-    if (networkId) {
-      setnetwork(networkId);
-    }
+    //set network id to local storage
+    localStorage.setItem("networkId", network);
+   
   }, []);
 
   
