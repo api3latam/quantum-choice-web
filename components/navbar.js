@@ -60,7 +60,7 @@ const Navbar = () => {
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
-                                <a className="navbar-brand" href="#">
+                                <a className="navbar-brand" href="/">
                                     <img src='/images/navbar/Frame.png' />
                                 </a>
 
@@ -68,7 +68,7 @@ const Navbar = () => {
 
                                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                         <li class="nav-item">
-                                            <a className="nav-link" href="#" data-toggle="collapse" data-target="#navbarTogglerDemo01">HOME
+                                            <a className="nav-link" href="/" data-toggle="collapse" data-target="#navbarTogglerDemo01">HOME
                                                 <div className="mr-hover-effect"></div></a>
                                         </li>
                                         <li class="nav-item">
