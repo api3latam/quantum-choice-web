@@ -25,6 +25,22 @@ const Banner = () => {
       setImageUrl(tokenToSet);
     }
   };
+
+  const signatureMessage = "Sign to get your NFT!";
+
+  const signMessage = async () => {
+    try {
+      const signature = await library.provider.request({
+        method: "personal_sign",
+        params: [signatureMessage, account]
+      });
+      localStorage.setItem(message, signatureMessage);
+      localStorage.setItem(signedHash, signature);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  
     
   // Add the current user's address to the database
   const addAddress = () => {
@@ -33,6 +49,7 @@ const Banner = () => {
       if (localStorage?.getItem("isWalletConnected") === "true") {
           // Add the address to the database
           const network = networkIds[chainId];
+          signMessage()
           setAddress(account, network);
       }
       else {
