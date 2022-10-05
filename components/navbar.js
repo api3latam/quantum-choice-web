@@ -32,6 +32,7 @@ const Navbar = () => {
         }
     }
 
+<<<<<<< HEAD
     useEffect(() => {
         const connectWalletOnPageLoad = async () => {
         if (localStorage?.getItem("isWalletConnected") === "true") {
@@ -45,6 +46,21 @@ const Navbar = () => {
         };
         connectWalletOnPageLoad();
     }, []);
+=======
+    // useEffect(() => {
+    //     const connectWalletOnPageLoad = async () => {
+    //     if (localStorage?.getItem("isWalletConnected") === "true") {
+    //         try {
+    //         await activate(WalletConnect);
+    //         localStorage.setItem("isWalletConnected", true);
+    //         } catch (ex) {
+    //         console.log(ex);
+    //         }
+    //     }
+    //     };
+    //     connectWalletOnPageLoad();
+    // }, []);
+>>>>>>> 0296e8a34b72b5f2af219a4c01a15f5bc168f794
 
     return (
         <React.Fragment>
@@ -60,7 +76,7 @@ const Navbar = () => {
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
-                                <a className="navbar-brand" href="#">
+                                <a className="navbar-brand" href="/">
                                     <img src='/images/navbar/Frame.png' />
                                 </a>
 
@@ -68,7 +84,7 @@ const Navbar = () => {
 
                                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                         <li class="nav-item">
-                                            <a className="nav-link" href="#" data-toggle="collapse" data-target="#navbarTogglerDemo01">HOME
+                                            <a className="nav-link" href="/" data-toggle="collapse" data-target="#navbarTogglerDemo01">HOME
                                                 <div className="mr-hover-effect"></div></a>
                                         </li>
                                         <li class="nav-item">
@@ -80,12 +96,12 @@ const Navbar = () => {
                                                 <div className="mr-hover-effect"></div></a>
                                         </li>
                                          {active ? (  <li>
-                                            <a  href="#" class="btnsi ml-auto" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
+                                            <a  href="#" class="btnsi ml-auto wallet-btn" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
                                             <p className="h2 text-white">
                                                 Connected with <b>{account}</b>
                                             </p>
                                         </li>):(  <li>
-                                            <a  href="#" class="btnsi ml-auto" onClick={connect} data-toggle="modal"> Connect wallet</a>
+                                            <a  href="#" class="btnsi ml-auto wallet-btn" onClick={connect} data-toggle="modal"> Connect wallet</a>
                                             <p className="h2 text-white">
                                                 Not connected
                                             </p>
