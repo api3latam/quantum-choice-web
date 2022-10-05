@@ -5,6 +5,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useState} from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { WalletConnect } from "../components/wallet/connectors";
+import Dropdown from "./networkdropdown"
 
 const Navbar = () => {
     const [networkId, setNetworkId] = useState(137);
@@ -74,7 +75,9 @@ const Navbar = () => {
                                                 Not connected
                                             </p>
                                         </li>)}
-
+                                         <li class="nav-item">
+                                           <Dropdown />
+                                        </li>
                                     </ul>
 
                                 </div>
