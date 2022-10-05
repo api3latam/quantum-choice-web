@@ -12,13 +12,12 @@ const Banner = () => {
   /**State for image url */
   const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
 
-  // Function to get the current user's address
   const { active, account,
     library,
     chainId } = useWeb3React();
 
   if (active) {
-    const network = networkIds[chainId];
+    const network = networkIds[chainId].name;
     const tokenData = getTokenStatus(account, network)
     if (tokenData) {
       const tokenToSet = getImageUrl(tokenData[-1]['id']);
@@ -40,11 +39,11 @@ const Banner = () => {
       console.error(err);
     }
   };
-  
+
     
   // Add the current user's address to the database
   const addAddress = () => {
-      // TODO: Change alerys with proper UI. Add metamask sign.
+      // TODO: Change alerys with proper UI.
       // Check if wallet is connected
       if (localStorage?.getItem("isWalletConnected") === "true") {
           // Add the address to the database

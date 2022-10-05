@@ -16,10 +16,13 @@ export const injected = new InjectedConnector({
 });
 
 export const WalletConnect = (chainId) => {
-  const rpc = process.env[`NEXT_PUBLIC_${(networkIds[chainId]).toUpperCase()}`];
-
+  const key = process.env[`NEXT_PUBLIC_${
+    (networkIds[chainId].name).toUpperCase()
+  }`];
+  const rpc = networkIds[chainId].rpc;
+  
   new WalletConnectConnector({
-    rpcUrl: rpc,
+    rpcUrl: rpc + key,
     bridge: "https://bridge.walletconnect.org",
     qrcode: true,
   });
