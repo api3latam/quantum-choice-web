@@ -19,6 +19,7 @@ export default function Dropdown() {
   
   const handleChange = (event) => {
     setnetwork(event.target.value);
+    localStorage.setItem("networkId", event.target.value);
   };
 
   return (
