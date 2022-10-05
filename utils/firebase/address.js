@@ -36,12 +36,13 @@ const networkQueryAppend = (networkName) => {
 /**
  * @notice Creates a register for new users on the page.
  * @param userAddress The address from the user.
- * @param networkName The target name for the network
+ * @param networkName The target name for the network.
  */
 export async function setAddress(userAddress, networkName) {
     try {
-        const alreadyExists = await verifyAddressExists(userAddress);
-        if (!alreadyExists) {
+        const { docExists, networkExists } = 
+            await verifyExistence(userAddress);
+        if (!docExists) {
             await firestore
                     .collection("users")
                     .doc(userAddress)
@@ -49,27 +50,31 @@ export async function setAddress(userAddress, networkName) {
                         address: userAddress,
                         minted: networkQuerySetter(networkName)
                     });
-        } else if (alreadyExists) {; 
+        } else if (docExists && !networkExists) {
             await firestore
                     .collection("users")
                     .doc(userAddress)
                     .update(networkQueryAppend(networkName));
-        }
+        };
     } catch (err) {
         console.error(`Error writing document: ${err}`);
     }
 }
 
 /**
- * @notice Checks wether a 
- * @param address 
+ * @notice Checks wether a document with the given address 
+ * already exists. If the document exists, it also checks 
+ * wether the given network is already registered.
+ * @param address The address to check for.
+ * @param network The network name to check for.
  * @returns 
  */
-async function verifyAddressExists(address) {
+async function verifyExistence(address, network) {
     const doc = await firestore
         .collection("users")
         .doc(address);
-    return doc.exists;
+    return { dockExists: doc.exists,
+        networkExists: false };
 }
 
 /**

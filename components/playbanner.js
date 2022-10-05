@@ -33,8 +33,20 @@ const Banner = () => {
         method: "personal_sign",
         params: [signatureMessage, account]
       });
-      localStorage.setItem(message, signatureMessage);
       localStorage.setItem(signedHash, signature);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const verifyMessage = async () => {
+    try {
+      const hashSignature = localStorage?.getItem("signedHash") || ""
+      const verify = await library.provider.request({
+        method: "personal_ecRecover",
+        params: [signatureMessage, hashSignature]
+      });
+      return verify === undefined ? false : verify;
     } catch (err) {
       console.error(err);
     }
@@ -45,11 +57,14 @@ const Banner = () => {
   const addAddress = () => {
       // TODO: Change alerys with proper UI.
       // Check if wallet is connected
+      const hasSigned = verifyMessage();
       if (localStorage?.getItem("isWalletConnected") === "true") {
           // Add the address to the database
           const network = networkIds[chainId];
-          signMessage()
           setAddress(account, network);
+          if (!hasSigned) {
+            signMessage()
+          }
       }
       else {
           // Popup to connect wallet
