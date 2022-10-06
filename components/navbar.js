@@ -14,11 +14,12 @@ const Navbar = () => {
         useWeb3React();
 
     async function connect() {
+        console.log("Connecting...");
         try {
             await activate(WalletConnect(networkId));
             localStorage.setItem("isWalletConnected", true);
         } catch (ex) {
-        console.log(ex);
+         console.log(ex);
         }
     }
 
@@ -65,12 +66,12 @@ const Navbar = () => {
                                                 <div className="mr-hover-effect"></div></a>
                                         </li>
                                          {active ? (  <li>
-                                            <a  href="#" class="btnsi ml-auto wallet-btn" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
+                                            <a  class="btnsi ml-auto wallet-btn" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
                                             <p className="h2 text-white">
                                                 Connected with <b>{account}</b>
                                             </p>
                                         </li>):(  <li>
-                                            <a  href="#" class="btnsi ml-auto wallet-btn" onClick={connect} data-toggle="modal"> Connect wallet</a>
+                                            <a  class="btnsi ml-auto wallet-btn" onClick={connect} data-toggle="modal"> Connect wallet</a>
                                              <p className="h2 text-white">
                                                 Not connected
                                             </p>
