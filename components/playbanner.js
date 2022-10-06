@@ -109,7 +109,6 @@ const Banner = () => {
               </div>
             </div>
             <div className="text-center">
-              <button class="btnsi ml-auto" onClick={getTokenId} > get token</button>
               <div class="row text-center">
                 <div class="col-lg-12 m-2">
                   <img src={imageUrl} alt="" width={300} height={300}/>
