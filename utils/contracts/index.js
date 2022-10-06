@@ -4,7 +4,7 @@ import { getSigner } from "../misc";
 const nftAbi = require("../../public/abis/nft");
 const raffleAbi = require("../../public/abis/nft");
 
-function getAddresses() {
+export function getAddresses() {
     return { nftAddress: "",
             raffleAddress: ""
         };
