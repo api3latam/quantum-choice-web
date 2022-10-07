@@ -1,4 +1,4 @@
-export default abi = [
+const raffleAbi = [
     {
         "inputs": [
         {
@@ -443,4 +443,6 @@ export default abi = [
         "stateMutability": "nonpayable",
         "type": "function"
     }
-]
+];
+
+export default raffleAbi;

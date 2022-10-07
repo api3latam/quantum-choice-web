@@ -1,4 +1,4 @@
-export default abi = [
+const nftAbi = [
     {
         "inputs": [
         {
@@ -635,4 +635,6 @@ export default abi = [
         "stateMutability": "nonpayable",
         "type": "function"
     }
-]
+];
+
+export default nftAbi;

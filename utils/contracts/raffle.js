@@ -1,4 +1,4 @@
-import { getContracts } from "./contracts";
+import { getContracts } from ".";
 
 export async function enterRaffle(
     raffleId, 
