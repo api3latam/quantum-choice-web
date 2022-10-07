@@ -1,5 +1,6 @@
 export * from "./ipfs";
 export * from "./signer";
+export * from "./alchemy";
 
 export const networkIds = {
     137: {

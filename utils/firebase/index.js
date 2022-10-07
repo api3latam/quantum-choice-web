@@ -1,5 +1,3 @@
-//import firebase from firebase/app
-
 import firebase from 'firebase/compat/app';
 
 import 'firebase/compat/auth';
@@ -25,3 +23,5 @@ export const firestore = firebase.firestore();
 
 // Storage exports
 export const storage = firebase.storage();
+
+export * from "./address";
