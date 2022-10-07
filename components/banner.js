@@ -1,47 +1,13 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { useEffect } from 'react'
-import { useWeb3React } from '@web3-react/core'
-import { injected } from '../components/wallet/connectors'
+import { useState } from 'react'
+import BannerSingleItem from '../components/bannerSingleItem'
 
 const Banner = () => {
-  
-  const { active, account, library, connector, activate, deactivate } =
-    useWeb3React();
-
-  async function connect() {
-    try {
-      await activate(injected);
-      localStorage.setItem("isWalletConnected", true);
-    } catch (ex) {
-      console.log(ex);
-    }
-  }
-
-  async function disconnect() {
-    try {
-      deactivate();
-      localStorage.setItem("isWalletConnected", false);
-    } catch (ex) {
-      console.log(ex);
-    }
-  }
-
-  useEffect(() => {
-    const connectWalletOnPageLoad = async () => {
-      if (localStorage?.getItem("isWalletConnected") === "true") {
-        try {
-          await activate(injected);
-          localStorage.setItem("isWalletConnected", true);
-        } catch (ex) {
-          console.log(ex);
-        }
-      }
-    };
-    connectWalletOnPageLoad();
-  }, []);
+  /**State for image url */
+  const [imageUrl, setImageUrl] = useState('/images/banner/NFTs.png');
+  const singleItem1 ={image:imageUrl}
+ 
   
   return (
     <div>
@@ -54,21 +20,18 @@ const Banner = () => {
               <div class="col-lg-12">
                 <h4 class="title">Quantum Choice</h4>
                 <ul class="breadcrumb-list">
-                  {active ? (  <li>
-                    <a  href="#" class="btnsi ml-auto" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
-                  </li>):(  <li>
-                    <a  href="#" class="btnsi ml-auto" onClick={connect} data-toggle="modal"> Connect wallet</a>
-                  </li>)}
+                  
+
+                  <li>
+                    <div className="slider p-4">
+                    <div className="bannerItems">
+                      <BannerSingleItem data={singleItem1}/>
+                    </div>
+                 
+                    </div>
+                  </li>
                 </ul>
-                {active ? (
-                  <p className="h2 text-white">
-                    Connected with <b>{account}</b>
-                  </p>
-                ) : (
-                  <p className="h2 text-white">
-                    Not connected
-                  </p>
-                )}
+              
               </div>
             </div>
           </div>
@@ -147,14 +110,16 @@ const Banner = () => {
                 </div>
               </div>
             </div>
-            <div class="row">
+             <div class="row">
               <div class="col-lg-12">
                 <div class="draw-time">
                   <div class="subtitle" id="subtitleid">Lottery Draw Starts In:</div>
                   <div class="draw-counter">
                     <div>00D : 00H : 00M : 00S</div>
                   </div>
-                  <div class="text">To meet Today's challenges</div>
+                  <div className="image-daily-lottery">
+                    <img src="/images/banner/Logo-QRNG.png" alt="image counter" />
+                  </div>
                 </div>
               </div>
             </div>
