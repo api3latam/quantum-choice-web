@@ -8,8 +8,6 @@ import { networkIds,
 import { setAddress,
       getTokenStatus } from '../utils/firebase';
 
-import { firestore } from "../utils/firebase";
-
 const Banner = () => {
   /**State for image url */
   const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
@@ -41,22 +39,6 @@ const Banner = () => {
     }
   };
 
-  const getTokenId = async () => {
-    //TODO: Get the addy from account state 
-
-    let docRef = await firestore.collection("users").doc("0x61A8E99597725D76e17DaAFB293734dC0Aa7eBf5")
-    let doc = await docRef.get();
-    if (doc.exists) {
-        console.log("Document data:", doc.data());
-        let network = networkIds[chainId].name
-        //let network2 = 'polygon'
-        return doc.data().signature[network]
-    } else {
-      //TODO: handle error correctly, now it just for debugging
-      console.log("Error, document does not exist");
-    }
-
-  }
   const verifyMessage = async () => {
     try {
       
