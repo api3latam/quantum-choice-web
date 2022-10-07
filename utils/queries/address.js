@@ -43,12 +43,13 @@ import { getTokenUri } from "../contracts";
  * on timestamp.
  * @returns 
  */
-export async function getTokenId() {
+export async function getTokenId(networkName) {
     const docRef = await firestoreClient
-        .collection("address");
+        .collection('address');
     const queryOutput = await docRef
-        .orderBy('lastMinted')
+        .orderBy(`lastMinted.${networkName}`)
         .limit(10)
         .get();
+    // Filter 
     console.log(queryOutput);
 };

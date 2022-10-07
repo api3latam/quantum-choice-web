@@ -21,7 +21,7 @@ export const WalletConnect = (chainId) => {
   }`];
   const rpc = networkIds[chainId].rpc;
   
-  new WalletConnectConnector({
+  return new WalletConnectConnector({
     rpcUrl: rpc + key,
     bridge: "https://bridge.walletconnect.org",
     qrcode: true,

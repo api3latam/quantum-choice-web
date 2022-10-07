@@ -16,7 +16,8 @@ const Navbar = () => {
     async function connect() {
         console.log("Connecting...");
         try {
-            await activate(WalletConnect(networkId));
+            const walletComponent = WalletConnect(networkId);
+            await activate(walletComponent);
             localStorage.setItem("isWalletConnected", true);
         } catch (ex) {
          console.log(ex);
