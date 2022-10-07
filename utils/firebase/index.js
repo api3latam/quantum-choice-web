@@ -23,5 +23,3 @@ export const firestore = firebase.firestore();
 
 // Storage exports
 export const storage = firebase.storage();
-
-export * from "./address";
