@@ -6,7 +6,7 @@ import { useWeb3React } from '@web3-react/core'
 import { networkIds,
       getImageUrl } from "../utils/misc";
 import { setAddress,
-      getTokenStatus } from '../utils/firebase';
+      getTokenStatus } from '../utils/queries';
 
 const Banner = () => {
   /**State for image url */
