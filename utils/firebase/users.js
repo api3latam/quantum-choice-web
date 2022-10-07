@@ -69,6 +69,7 @@ export async function setAddress(userAddress, networkName) {
  * @returns 
  */
 async function verifyExistence(address, network) {
+    // Pending add network verification
     const doc = await firestore
         .collection("users")
         .doc(address);

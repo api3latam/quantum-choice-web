@@ -1,4 +1,4 @@
-import { firestore } from "./auth";
+import { firestore } from ".";
 import { getTokenUri } from "../contracts";
 
 /**
@@ -43,18 +43,12 @@ import { getTokenUri } from "../contracts";
  * on timestamp.
  * @returns 
  */
-const getTokenId = async () => {
-    //TODO: Get the addy from account state 
-
-    let docRef = await firestore.collection("users").doc(account)
-    let doc = await docRef.get();
-    if (doc.exists) {
-        console.log("Document data:", doc.data());
-        let network = networkIds[chainId].name
-        //let network2 = 'polygon'
-        return doc.data().signature[network]
-    } else {
-      //TODO: handle error correctly, now it just for debugging
-      console.log("Error, document does not exist");
-    }
+export async function getTokenId() {
+    const docRef = await firestore
+        .collection("address");
+    const queryOutput = await docRef
+        .orderBy('lastMinted')
+        .limit(10)
+        .get();
+    console.log(queryOutput);
 };
