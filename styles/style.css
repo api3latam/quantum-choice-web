@@ -459,16 +459,28 @@ p {
   background-position: center center;
 }
 .cs-text{
-  margin-top: 30%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
 
+.cs-logo{
+  position: fixed;
+  display: block;
+  bottom: 20px;
+  right: 20px;
+  width: fit-content;
+}
+
+
 .bg-image-wrapper {
    z-index:-1;
    position: fixed;
+   display: flex;
+   flex-direction: column;   
+   justify-content: center;
+   align-items: center;
    top: 0;
    left: 0;
    width: 100vw;

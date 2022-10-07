@@ -3,16 +3,12 @@ import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import { useState} from 'react'
-import { useWeb3React } from '@web3-react/core'
-import { WalletConnect } from "./wallet/connectors";
-import Dropdown from "./networkdropdown"
 
 const Navbar = () => {
     const [networkId, setNetworkId] = useState(137);
 
     const { active, account, activate, deactivate } =
-        useWeb3React();
-
+       
     async function connect() {
         console.log("Connecting...");
         try {
