@@ -1,4 +1,4 @@
-import { firestore } from "./auth";
+import firestore from ".";
 
 const networkQuerySetter = (networkName) => {
     if (networkName === "rsk") {

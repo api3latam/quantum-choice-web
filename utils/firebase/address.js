@@ -1,4 +1,4 @@
-import { firestore } from ".";
+import firestore from ".";
 import { getTokenUri } from "../contracts";
 
 /**

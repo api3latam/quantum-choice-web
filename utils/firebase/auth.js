@@ -1,8 +1,6 @@
-import firebase from 'firebase/compat/app';
-
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
-import 'firebase/compat/storage';
+import { initializeApp,
+  apps,
+  firestore, } from 'firebase';
 
 const firebaseConfig = {
   apiKey: process.env['NEXT_PUBLIC_FIREBASE_API'],
@@ -14,12 +12,11 @@ const firebaseConfig = {
   measurementId: "G-2HP3ERTHWP"
 };
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
+let firestoreClient;
 
-// Firestore exports for convenience
-export const firestore = firebase.firestore();
+if (!apps.length) {
+  initializeApp(firebaseConfig);
+  firestoreClient = firestore(apps[0]);
+};
 
-// Storage exports
-export const storage = firebase.storage();
+export default firestoreClient;
