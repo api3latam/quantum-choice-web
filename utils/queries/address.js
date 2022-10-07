@@ -1,4 +1,4 @@
-import firestore from "./auth";
+import { firestoreClient } from "./auth";
 import { getTokenUri } from "../contracts";
 
 /**
@@ -13,12 +13,12 @@ import { getTokenUri } from "../contracts";
     userAddress,
     networkName
     ) {
-        const isMinted = await firestore
+        const isMinted = await firestoreClient
             .collection("users")
             .doc(userAddress)
             .get(`minted.${networkName}`);
         if (isMinted === true) {
-            const tokenIds = await firestore
+            const tokenIds = await firestoreClient
                 .collection("address")
                 .doc(userAddress)
                 .get(`network.${networkName}`)
@@ -44,7 +44,7 @@ import { getTokenUri } from "../contracts";
  * @returns 
  */
 export async function getTokenId() {
-    const docRef = await firestore
+    const docRef = await firestoreClient
         .collection("address");
     const queryOutput = await docRef
         .orderBy('lastMinted')

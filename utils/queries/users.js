@@ -1,4 +1,4 @@
-import firestore from "./auth";
+import { firestoreClient } from "./auth";
 
 const networkQuerySetter = (networkName) => {
     if (networkName === "rsk") {
@@ -42,7 +42,7 @@ export async function setAddress(userAddress, networkName) {
         const { docExists, networkExists } = 
             await verifyExistence(userAddress);
         if (!docExists) {
-            await firestore
+            await firestoreClient
                     .collection("users")
                     .doc(userAddress)
                     .set({
@@ -50,7 +50,7 @@ export async function setAddress(userAddress, networkName) {
                         minted: networkQuerySetter(networkName)
                     });
         } else if (docExists && !networkExists) {
-            await firestore
+            await firestoreClient
                     .collection("users")
                     .doc(userAddress)
                     .update(networkQueryAppend(networkName));
@@ -70,7 +70,7 @@ export async function setAddress(userAddress, networkName) {
  */
 async function verifyExistence(address, network) {
     // Pending add network verification
-    const doc = await firestore
+    const doc = await firestoreClient
         .collection("users")
         .doc(address);
     return { dockExists: doc.exists,
