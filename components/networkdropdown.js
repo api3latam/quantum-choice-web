@@ -12,7 +12,6 @@ export default function Dropdown() {
   useEffect(() => {
     //set network id to local storage
     localStorage.setItem("networkId", network);
-   
   }, []);
 
   
@@ -35,11 +34,10 @@ export default function Dropdown() {
           label="network"
           onChange={handleChange}
         >
-          <MenuItem value={1}>Ethereum</MenuItem>
+          <MenuItem value={10}>Optimism</MenuItem>
           <MenuItem value={5}>Goerli</MenuItem>
           <MenuItem value={137}>Polygon</MenuItem>
           <MenuItem value={42161}>Arbitrum</MenuItem>
-          <MenuItem value={30}>RSK</MenuItem>
         </Select>
       </FormControl>
     </Box>
