@@ -21,7 +21,7 @@ const Banner = () => {
   const initialization = async() => {
     const network = networkIds[chainId].name;
     const tokenData = await getTokenStatus(account, network);
-    if (tokenData) {
+    if (tokenData.length > 0) {
       const tokenToSet = getImageUrl(tokenData[-1]['id']);
       setImageUrl(tokenToSet);
     }
