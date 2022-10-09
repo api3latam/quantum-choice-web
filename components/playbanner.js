@@ -6,7 +6,9 @@ import { useWeb3React } from '@web3-react/core'
 import { networkIds,
       getImageUrl } from "../utils/misc";
 import { setAddress,
-      getTokenStatus } from '../utils/queries';
+      getTokenStatus,
+      getSignedHash,
+      setSignedHash } from '../utils/queries';
 
 const Banner = () => {
   /**State for image url */
@@ -33,7 +35,10 @@ const Banner = () => {
         method: "personal_sign",
         params: [signatureMessage, account]
       });
-      localStorage.setItem(signedHash, signature);
+      await setSignedHash(
+        networkIds[chainId].name, 
+        signature
+      );
     } catch (err) {
       console.error(err);
     }
@@ -41,8 +46,10 @@ const Banner = () => {
 
   const verifyMessage = async () => {
     try {
-      
-      const hashSignature = localStorage?.getItem("signedHash") || ""
+      const hashSignature = await getSignedHash(
+        account, 
+        networkIds[chainId].name
+      );
       const verify = await library.provider.request({
         method: "personal_ecRecover",
         params: [signatureMessage, hashSignature]
