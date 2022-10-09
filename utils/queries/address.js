@@ -13,15 +13,19 @@ import { getTokenUri } from "../contracts";
     userAddress,
     networkName
     ) {
-        const isMinted = await firestoreClient
+        const doc = await firestoreClient
             .collection("users")
             .doc(userAddress)
-            .get(`minted.${networkName}`);
+            .get();
+        const isMinted = doc['minted'][networkName];
+        console.log(`isMinted: ${isMinted}`);
         if (isMinted === true) {
-            const tokenIds = await firestoreClient
+            const meta = await firestoreClient
                 .collection("address")
                 .doc(userAddress)
-                .get(`network.${networkName}`)
+                .get()
+            const tokenIds = meta['network'][networkName];
+            console.log(`tokenIds: ${tokenIds}`); 
             const tokenUris = 
                 tokenIds.length > 1
                 ? tokenIds.map(token => {

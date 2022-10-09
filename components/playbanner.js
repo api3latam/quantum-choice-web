@@ -18,13 +18,17 @@ const Banner = () => {
     library,
     chainId } = useWeb3React();
 
-  if (active) {
+  const initialization = async() => {
     const network = networkIds[chainId].name;
-    const tokenData = getTokenStatus(account, network)
+    const tokenData = await getTokenStatus(account, network);
     if (tokenData) {
       const tokenToSet = getImageUrl(tokenData[-1]['id']);
       setImageUrl(tokenToSet);
     }
+  }
+
+  if (active) {
+    initialization();
   };
 
   const signatureMessage = "Sign to get your NFT!";

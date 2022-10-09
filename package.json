@@ -20,8 +20,8 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.10.8",
     "@web3-react/core": "^6.1.9",
-    "@web3-react/injected-connector": "^6.0.7",
     "@web3-react/walletconnect-connector": "^6.2.13",
+    "alchemy-sdk": "^2.1.0",
     "bootstrap": "^5.2.1",
     "ethers": "^5.7.1",
     "firebase": "^9.10.0",
@@ -29,9 +29,7 @@
     "next": "12.3.1",
     "react": "18.2.0",
     "react-bootstrap": "^2.5.0",
-    "react-dom": "18.2.0",
-    "web3-react": "^5.0.5",
-    "alchemy-sdk": "^2.1.0"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "eslint": "8.23.1",
