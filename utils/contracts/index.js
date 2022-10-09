@@ -1,5 +1,4 @@
 import { Contract } from "ethers";
-import { getSigner } from "../misc";
 
 const nftAbi = require("../../public/abis/nft");
 const raffleAbi = require("../../public/abis/nft");
@@ -10,8 +9,7 @@ export function getAddresses() {
         };
 };
 
-export async function getContracts() {
-    const signer = await getSigner();
+export async function getContracts(signer) {
     const { nftAddress, raffleAddress } = getAddresses();
 
     const nft = new Contract(nftAddress, nftAbi, signer);

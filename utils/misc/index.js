@@ -7,9 +7,9 @@ export const networkIds = {
         name: "polygon",
         rpc: "https://polygon-mainnet.g.alchemy.com/v2/"
     },
-    1: {
-        name: "ethereum",
-        rpc: "https://mainnet.infura.io/v3/"
+    10: {
+        name: "optimism",
+        rpc: "https://op.getblock.io/mainnet/?api_key="
     },
     42161: {
         name: "arbitrum",
@@ -18,9 +18,5 @@ export const networkIds = {
     5: {
         name: "goerli",
         rpc: "https://eth-goerli.g.alchemy.com/v2/"
-    },
-    30: {
-        name: "rsk",
-        rpc: "https://rsk.getblock.io/mainnet/?api_key="
     }
 }
