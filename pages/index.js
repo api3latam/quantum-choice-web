@@ -15,9 +15,18 @@ export default function Home() {
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* Google Analytics */}
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2SLZRDG2P"></script>
+          <script dangerouslySetInnerHTML={
+              { __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){window.dataLayer.push(arguments)}
+                  gtag("js", new Date());
+                  gtag("config", "G-G2SLZRDG2P");
+              `}
+          }></script>
       <Navbar/>
       <Fullbanner/>
-      {/* Image */}
       
     </div>
   )
