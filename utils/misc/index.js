@@ -1,5 +1,4 @@
 export * from "./ipfs";
-export * from "./signer";
 export * from "./alchemy";
 
 export const networkIds = {
@@ -9,7 +8,7 @@ export const networkIds = {
     },
     10: {
         name: "optimism",
-        rpc: "https://op.getblock.io/mainnet/?api_key="
+        rpc: "https://opt-mainnet.g.alchemy.com/v2/"
     },
     42161: {
         name: "arbitrum",
