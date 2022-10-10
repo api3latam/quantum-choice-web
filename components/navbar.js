@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import { useState} from 'react'
@@ -55,16 +55,19 @@ const Navbar = () => {
 
                                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                         <li class="nav-item">
-                                            <a className="nav-link" href="/" data-toggle="collapse" data-target="#navbarTogglerDemo01">HOME
-                                                <div className="mr-hover-effect"></div></a>
+                                            <Link href='/'>
+                                            <a className="nav-link"  data-toggle="collapse" data-target="#navbarTogglerDemo01">HOME
+                                                <div className="mr-hover-effect"></div></a></Link>
                                         </li>
                                         <li class="nav-item">
-                                            <a className="nav-link" href="/play" data-toggle="collapse" data-target="#navbarTogglerDemo01">PLAY
-                                                <div className="mr-hover-effect"></div></a>
+                                            <Link href='/play'>
+                                            <a className="nav-link" data-toggle="collapse" data-target="#navbarTogglerDemo01">PLAY
+                                                <div className="mr-hover-effect"></div></a></Link>
                                         </li>
                                         <li class="nav-item">
-                                            <a className="nav-link" href="choice" data-toggle="collapse" data-target="#navbarTogglerDemo01">CHOICE
-                                                <div className="mr-hover-effect"></div></a>
+                                            <Link href='/choice'>
+                                            <a className="nav-link" data-toggle="collapse" data-target="#navbarTogglerDemo01">CHOICE
+                                                <div className="mr-hover-effect"></div></a></Link>
                                         </li>
                                          {active ? (  <li>
                                             <a  class="btnsi ml-auto wallet-btn" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
