@@ -8,6 +8,7 @@ import Select from '@mui/material/Select';
 export default function Dropdown() {
 
   const [network, setnetwork] = useState(137);
+  
   const chainimage = {
     eth:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_ethereum.jpg&w=32&q=75',
     goerli:'https://chainlist.org/_next/image?url=%2Funknown-logo.png&w=32&q=75',
@@ -21,7 +22,7 @@ export default function Dropdown() {
     localStorage.setItem("networkId", network);
     //Get network id from local storage
     const networkId = localStorage.getItem("networkId");
-    console.log("Current network ID",networkId);
+    console.log("Current network ID", networkId);
   }, []);
 
   
