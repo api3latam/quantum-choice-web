@@ -19,12 +19,16 @@ export default function Dropdown() {
   useEffect(() => {
     //set network id to local storage
     localStorage.setItem("networkId", network);
+    //Get network id from local storage
+    const networkId = localStorage.getItem("networkId");
+    console.log("Current network ID",networkId);
   }, []);
 
   
   const handleChange = (event) => {
     setnetwork(event.target.value);
     localStorage.setItem("networkId", event.target.value);
+    console.log('Current network',localStorage.getItem("networkId"));
   };
 
   return (
