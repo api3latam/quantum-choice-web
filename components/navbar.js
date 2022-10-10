@@ -10,7 +10,8 @@ import Dropdown from "./networkdropdown"
 const Navbar = () => {
     const [networkId, setNetworkId] = useState(137);
 
-    const { active, account, activate, deactivate } =
+    const { active, account, connector,
+            activate, deactivate } =
         useWeb3React();
 
     async function connect() {
@@ -24,12 +25,12 @@ const Navbar = () => {
         }
     }
 
-    async function disconnect() {
-        try {
+    const disconnect = () => {
+        if (active) {
+            connector = undefined;
+            connector = WalletConnect(networkId);
             deactivate();
-            localStorage.setItem("isWalletConnected", false);
-        } catch (ex) {
-        console.log(ex);
+            localStorage.clear()
         }
     }
 

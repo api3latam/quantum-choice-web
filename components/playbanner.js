@@ -20,7 +20,7 @@ const Banner = () => {
 
   let network = "polygon";
 
-  const initialization = async() => {
+  const initialization = async () => {
     if ( !isInitialized ) {
       network = networkIds[chainId].name;
       const tokenData = await getTokenStatus(account, network) || [];
