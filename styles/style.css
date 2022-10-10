@@ -471,7 +471,25 @@ p {
 .breadcrumb-area.bc-lottery {
   padding: 240px 0px 193px;
 }
-
+.dropdown-box{
+  margin-left: 10px;
+}
+#formcntrl{
+  color: #fff;
+}
+#network-id{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 1rem 2.5rem 1rem 1rem;
+  background-color: #2d3345;
+}
+.chainimg{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
 .breadcrumb-area.bc-lottery .bc-img {
   position: absolute;
   right: 0px;
