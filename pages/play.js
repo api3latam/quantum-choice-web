@@ -5,7 +5,7 @@ import Banner from '../components/playbanner'
 import LatestActivites  from '../components/latestActivites'
 
 
-export default function Home() {
+export default function play() {
   
 
   return (
@@ -15,7 +15,6 @@ export default function Home() {
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar/>
       <Banner/>
       {/*
 

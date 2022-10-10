@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/bootstrap.min.css'
 import '../styles/responsive.css'
 import { useEffect } from 'react';
+import Navbar from '../components/navbar'
+
 
 config.autoAddCss = false
 
@@ -27,6 +29,7 @@ function MyApp({ Component, pageProps }) {
      <Web3ReactProvider
         getLibrary={getLibrary}
       >
+      <Navbar />
       <Component {...pageProps} />
     </Web3ReactProvider>
   )

@@ -10,11 +10,10 @@ export default function Dropdown() {
   const [network, setnetwork] = useState(137);
   
   const chainimage = {
-    eth:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_ethereum.jpg&w=32&q=75',
     goerli:'https://chainlist.org/_next/image?url=%2Funknown-logo.png&w=32&q=75',
     matic:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_polygon.jpg&w=32&q=75',
     arbitrium:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_arbitrum.jpg&w=32&q=75',
-    optimism:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_rsk.jpg&w=32&q=75'
+    optimism:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_optimism.jpg&w=32&q=75'
   }
 
   useEffect(() => {
@@ -46,11 +45,10 @@ export default function Dropdown() {
           label="network"
           onChange={handleChange}
         >
-          <MenuItem value={1}><img src={chainimage.eth} className='chainimg'/>Ethereum</MenuItem>
           <MenuItem value={5}><img src={chainimage.goerli} className='chainimg'/>Goerli</MenuItem>
           <MenuItem value={137}><img src={chainimage.matic} className='chainimg'/>Polygon</MenuItem>
           <MenuItem value={42161}><img src={chainimage.arbitrium} className='chainimg'/>Arbitrum</MenuItem>
-          <MenuItem value={30}><img src={chainimage.rsk} className='chainimg'/>RSK</MenuItem>
+          <MenuItem value={30}><img src={chainimage.optimism} className='chainimg'/>Optimism</MenuItem>
         </Select>
       </FormControl>
     </Box>
