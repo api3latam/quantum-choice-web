@@ -14,13 +14,13 @@ const Banner = () => {
   /**State for image url */
   const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
 
-  const { active, account,
-    library,
-    chainId } = useWeb3React();
+  const { active, account, chainId } = useWeb3React();
+
+  let network = "polygon";
 
   const initialization = async() => {
-    const network = networkIds[chainId].name;
-    const tokenData = await getTokenStatus(account, network);
+    network = networkIds[chainId].name;
+    const tokenData = await getTokenStatus(account, network) || [];
     if (tokenData.length > 0) {
       const tokenToSet = getImageUrl(tokenData[-1]['id']);
       setImageUrl(tokenToSet);
@@ -31,17 +31,14 @@ const Banner = () => {
     initialization();
   };
 
-  const signatureMessage = "Sign to get your NFT!";
-
   const signMessage = async () => {
     try {
-      const signature = await library.provider.request({
-        method: "personal_sign",
-        params: [signatureMessage, account]
-      });
+      const signedMessage = account + network
+
       await setSignedHash(
-        networkIds[chainId].name, 
-        signature
+        account,
+        network, 
+        signedMessage
       );
     } catch (err) {
       console.error(err);
@@ -50,14 +47,19 @@ const Banner = () => {
 
   const verifyMessage = async () => {
     try {
+      let verify;
+
       const hashSignature = await getSignedHash(
         account, 
-        networkIds[chainId].name
-      );
-      const verify = await library.provider.request({
-        method: "personal_ecRecover",
-        params: [signatureMessage, hashSignature]
-      });
+        network
+      ) || false;
+
+      if (hashSignature) {
+        verify = hashSignature === account+network 
+          ? hashSignature 
+          : undefined;
+      }
+
       return verify === undefined ? false : verify;
     } catch (err) {
       console.error(err);
@@ -66,16 +68,17 @@ const Banner = () => {
 
     
   // Add the current user's address to the database
-  const addAddress = () => {
+  const addAddress = async () => {
       // TODO: Change alerys with proper UI.
       // Check if wallet is connected
-      const hasSigned = verifyMessage();
+      const hasSigned = await verifyMessage();
       if (localStorage?.getItem("isWalletConnected") === "true") {
           // Add the address to the database
-          const network = networkIds[chainId];
-          setAddress(account, network);
+          await setAddress(account, network);
           if (!hasSigned) {
-            signMessage()
+            await signMessage()
+          } else if (hasSigned) {
+            alert("Your NFT is being minted!");
           }
       }
       else {

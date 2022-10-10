@@ -11,8 +11,8 @@ import { useEffect } from 'react';
 config.autoAddCss = false
 
 import { Web3ReactProvider } from '@web3-react/core';
-
 import { Web3Provider } from "@ethersproject/providers";
+import { WalletConnect } from '../components/wallet/connectors';
 
 function getLibrary(provider) {
   return new Web3Provider(provider);
@@ -24,7 +24,9 @@ function MyApp({ Component, pageProps }) {
     import("bootstrap/dist/js/bootstrap");
     },[])
   return (
-     <Web3ReactProvider getLibrary={getLibrary}>
+     <Web3ReactProvider
+        getLibrary={getLibrary}
+      >
       <Component {...pageProps} />
     </Web3ReactProvider>
   )

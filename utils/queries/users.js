@@ -35,11 +35,11 @@ const networkSignedAppend = (
     if (networkName === "polygon") {
         return { 'signature.polygon': signature }
     } else if (networkName === "optimism") {
-        return { 'minted.optimism': signature }
+        return { 'signature.optimism': signature }
     } else if (networkName === "arbitrum") {
-        return { 'minted.arbitrum': signature }
+        return { 'signature.arbitrum': signature }
     } else if (networkName === "goerli") {
-        return { 'minted.goerli': signature }
+        return { 'signature.goerli': signature }
     } else {
         throw Error(`The given network ${networkName} is not available`);
     }
@@ -52,8 +52,12 @@ const networkSignedAppend = (
  */
 export async function setAddress(userAddress, networkName) {
     try {
-        const { docExists, networkExists } = 
-            await verifyExistence(userAddress);
+        console.log(`Setting Address on: ${networkName} \
+            for: ${userAddress}`)
+        const [ docExists, networkExists ] = 
+            await verifyExistence(userAddress, networkName);
+        console.log(`The doc exists: ${docExists}\n\
+            The network is registered ${networkExists}`)
         if (!docExists) {
             await firestoreClient
                     .collection("users")
@@ -86,13 +90,16 @@ async function verifyExistence(address, network) {
     let networkExistence;
     const doc = await firestoreClient
         .collection("users")
-        .doc(address);
+        .doc(address)
+        .get();
     if (doc.exists) {
         dockExistence = true;
-        networkExistence = doc[`minted.${network}`] || false;
+        networkExistence = 
+            doc.data()['minted'][network] === undefined
+            ? false
+            : true;
     }
-    return { dockExists: dockExistence,
-        networkExists: networkExistence };
+    return [ dockExistence, networkExistence ];
 };
 
 /**
@@ -106,13 +113,10 @@ export async function getSignedHash(address, network) {
         const doc = await firestoreClient
             .collection("users")
             .doc(address)
-            .where(`signature.${network}`)
             .get();
         if (doc.exists) {
-            return doc[`signature.${network}`];
-        } else {
-            return "";
-        }
+            return doc.data()['signature'][network];
+        };
     } catch (err) {
         console.error(err);
     }

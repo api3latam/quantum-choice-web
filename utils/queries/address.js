@@ -19,14 +19,15 @@ import { getTokenUri } from "../contracts";
             .doc(userAddress)
             .get();
         if (doc.exists) {
-            const isMinted = doc['minted'][networkName];
-            console.log(`isMinted: ${isMinted}`);
-            if (isMinted === true) {
+            const isMinted = doc.data()['minted'][networkName];
+            console.log(`Is token minted on ${networkName} for ${userAddress}?\
+                ${isMinted}`)
+            if (isMinted) {
                 const meta = await firestoreClient
                     .collection("address")
                     .doc(userAddress)
                     .get()
-                const tokenIds = meta['network'][networkName];
+                const tokenIds = meta.data()['network'][networkName];
                 console.log(`tokenIds: ${tokenIds}`); 
                 const tokenUris = 
                     tokenIds.length > 1
@@ -38,10 +39,7 @@ import { getTokenUri } from "../contracts";
                     : [ { id: getTokenUri(tokenIds[0]['id']),
                             shinny: tokenIds[0]['isShinny'] } ];
                 return tokenUris;
-            }
-        } else {
-            // Add alert or default image for loading
-            return [];
+                }
         }
 };
 
