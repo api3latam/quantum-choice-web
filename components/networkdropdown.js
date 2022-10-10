@@ -13,7 +13,7 @@ export default function Dropdown() {
     goerli:'https://chainlist.org/_next/image?url=%2Funknown-logo.png&w=32&q=75',
     matic:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_polygon.jpg&w=32&q=75',
     arbitrium:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_arbitrum.jpg&w=32&q=75',
-    rsk:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_rsk.jpg&w=32&q=75'
+    optimism:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_rsk.jpg&w=32&q=75'
   }
 
   useEffect(() => {

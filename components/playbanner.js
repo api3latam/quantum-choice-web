@@ -14,7 +14,8 @@ const Banner = () => {
   /**State for image url */
   const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
 
-  const { active, account, chainId } = useWeb3React();
+  const { active, account } = useWeb3React();
+  const { chainId, setChainId } = useWeb3React(137);
 
   let network = "polygon";
 
