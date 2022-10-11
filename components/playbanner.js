@@ -142,7 +142,7 @@ const Banner = () => {
             <div className="text-center">
               <div class="row text-center">
                 <div class="col-lg-12 m-2">
-                  {isVideo ? (<video class="video-fluid z-depth-1" autoplay loop  muted style={{ width: '200px', height: '600px' }}>
+                  {isVideo ? (<video class="video-fluid z-depth-1" autoplay loop controls muted style={{ width: '200px', height: '600px' }}>
                     <source src={videoUrl} type="video/mp4" />
                   </video>):(<img src={imageUrl} alt="" className="img-fluid"/>)}
                   
