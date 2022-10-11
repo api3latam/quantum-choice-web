@@ -41,6 +41,17 @@ const Navbar = () => {
         }
     }
 
+    /**
+     * Function to shorten the address
+     * 0x61A8E99597725D76e17DaAFB293734dC0Aa7eBf5 to 0x61A8...7eBf5
+     */
+    const shortenAddress = (address) => {
+        if (address) {
+            return address.substring(0, 6) + "..." + address.substring(address.length - 4, address.length);
+        }
+    }
+
+
 
     return (
         <React.Fragment>
@@ -73,7 +84,7 @@ const Navbar = () => {
                                          {active ? (  <li>
                                             <a  class="btnsi ml-auto wallet-btn" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
                                             <p className="h2 text-white">
-                                                Connected with <b>{account}</b>
+                                                Connected with <b>{shortenAddress(account)}</b>
                                             </p>
                                         </li>):(  <li>
                                             <a  class="btnsi ml-auto wallet-btn" onClick={connect} data-toggle="modal"> Connect wallet</a>
