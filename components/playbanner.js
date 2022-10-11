@@ -39,7 +39,8 @@ const Banner = () => {
       if (tokenData.length > 0) {
         const targetTokenid = tokenData[tokenData.length - 1]['id'];
         const tokenToSet = await getImageUrl(targetTokenid);
-        if (targetTokenid > 100) {
+        const tokenId = targetTokenid.split('/');
+        if (Number(tokenId[tokenId.length - 1]) > 100) {
           setImageUrl(tokenToSet);
         } else {
           setIsVideo(true);
