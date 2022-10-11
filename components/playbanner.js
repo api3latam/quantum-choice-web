@@ -132,7 +132,7 @@ const Banner = () => {
             <div className="text-center">
               <div class="row text-center">
                 <div class="col-lg-12 m-2">
-                  <img src={imageUrl} alt=""/>
+                  <img src={imageUrl} alt="" className="img-fluid"/>
                 </div>
                 </div>
                   {imageUrl === defaultImageUrl ? (<button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>) : (<h1> NFT MINTED </h1>)}
