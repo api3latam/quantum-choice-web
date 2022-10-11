@@ -13,9 +13,11 @@ import { setAddress,
 const Banner = () => {
   /**State for image url */
   const defaultImageUrl = 'https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=';
-  const [imageUrl, setImageUrl] = useState(defaultImageUrl);
+  const [ imageUrl, setImageUrl ] = useState(defaultImageUrl);
+  const [ videoUrl, setVideoUrl ] = useState("");
   const [ chainId, setChainId ] = useState(5);
   const [ isInitialized, setInitialization ] = useState(false);
+  const [ isVideo, setIsVideo ] = useState(false);
 
   const { active, account } = useWeb3React();
 
@@ -35,9 +37,14 @@ const Banner = () => {
       network = networkIds[chainId].name;
       const tokenData = await getTokenStatus(account, network) || [];
       if (tokenData.length > 0) {
-        const tokenToSet = await getImageUrl(tokenData[tokenData.length - 1]['id']);
-        setImageUrl(tokenToSet);
-
+        const targetTokenid = tokenData[tokenData.length - 1]['id'];
+        const tokenToSet = await getImageUrl(targetTokenid);
+        if (targetTokenid > 100) {
+          setImageUrl(tokenToSet);
+        } else {
+          setIsVideo(true);
+          setVideoUrl(tokenToSet);
+        }
         setInitialization(true);
       }
     }
