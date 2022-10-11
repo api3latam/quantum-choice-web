@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useState} from 'react'
 import { useWeb3React } from '@web3-react/core'
@@ -19,6 +19,15 @@ const Banner = () => {
   const { active, account } = useWeb3React();
 
   let network = "polygon";
+  useEffect(() => {
+    const chain = localStorage.getItem('networkId');
+
+    console.log('Use Effect - PlayBanner', chain);
+    if (chain) {
+      setChainId(parseInt(chain));
+      initialization();
+    }
+  }, []);
 
   const initialization = async () => {
     if ( !isInitialized ) {
