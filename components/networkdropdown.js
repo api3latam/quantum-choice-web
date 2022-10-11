@@ -17,7 +17,7 @@ export default function Dropdown() {
   }
 
   useEffect(() => {
-    const networkId = localStorage.getItem("networkId");
+    const networkId = localStorage.getItem("networkId"); 
     
     if (networkId) {
       setnetwork(networkId);
