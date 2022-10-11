@@ -104,7 +104,11 @@ const Banner = () => {
       }
       else {
           // Popup to connect wallet
-          alert("Please connect your wallet to continue");
+           Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Connect your wallet to continue',
+          })
       }
   };
 
