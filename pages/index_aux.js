@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
-import Banner from '../components/playbanner'
+import Banner from '../components/banner'
 import LatestActivites  from '../components/latestActivites'
 
 
-export default function play() {
+export default function Home() {
   
 
   return (
@@ -16,6 +16,7 @@ export default function play() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner/>
+      <LatestActivites/>
       {/*
 
       <main className={styles.main}>
@@ -71,8 +72,8 @@ export default function play() {
           </span>
         </a>
       </footer>
-       */}
 
+       */}
     </div>
   )
 }
