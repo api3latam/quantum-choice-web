@@ -15,5 +15,8 @@ export const convertLinkToIpfs = (inputURI) => {
 export const getImageUrl = async (inputUrl) => {
   const response = await fetch(inputUrl);
   const raw = await response.json();
-  return raw['image'];
+  const toReturn = raw['image'] === undefined 
+    ? raw['animation']
+    : raw['image'] 
+  return toReturn;
 }
