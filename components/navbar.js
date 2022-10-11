@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,17 +9,24 @@ import Dropdown from "./networkdropdown"
 
 const Navbar = () => {
     const [networkId, setNetworkId] = useState(137);
+    const [addy, setAddy] = useState('');
 
     const { active, account, connector,
             activate, deactivate } =
         useWeb3React();
-
+    
+    useEffect(() => {
+       const wc = localStorage.getItem('walletconnect');
+       console.log('Wallet Connect', wc);  
+       
+    }, []);
     async function connect() {
         console.log("Connecting...");
         try {
             const walletComponent = WalletConnect(networkId);
             await activate(walletComponent);
             localStorage.setItem("isWalletConnected", true);
+           
         } catch (ex) {
          console.log(ex);
         }
@@ -30,9 +37,10 @@ const Navbar = () => {
             connector = undefined;
             connector = WalletConnect(networkId);
             deactivate();
-            localStorage.clear()
+            localStorage.setItem("isWalletConnected", false);
         }
     }
+
 
     return (
         <React.Fragment>
