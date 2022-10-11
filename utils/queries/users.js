@@ -87,7 +87,7 @@ export async function setAddress(userAddress, networkName) {
 async function verifyExistence(address, network) {
     // Pending add network verification
     let dockExistence = false;
-    let networkExistence;
+    let networkExistence = false;
     const doc = await firestoreClient
         .collection("users")
         .doc(address)

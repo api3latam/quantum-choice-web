@@ -20,7 +20,11 @@ import { getTokenIds } from "../misc";
             .doc(userAddress)
             .get();
         if (doc.exists) {
-            const isMinted = doc.data()['minted'][networkName];
+            const isMinted = 
+                doc.data()['minted'][networkName] === undefined || 
+                doc.data()['minted'][networkName] === false
+                ? false
+                : true;
             console.log(`Is token minted on ${networkName} for ${userAddress}?\
                 ${isMinted}`)
             if (isMinted) {
