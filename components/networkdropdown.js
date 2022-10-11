@@ -17,10 +17,15 @@ export default function Dropdown() {
   }
 
   useEffect(() => {
-    //set network id to local storage
-    localStorage.setItem("networkId", network);
-    //Get network id from local storage
     const networkId = localStorage.getItem("networkId");
+    
+    if (networkId) {
+      setnetwork(networkId);
+      localStorage.setItem("networkId", networkId);
+    }
+    //set network id to local storage
+    
+    //Get network id from local storage
     console.log("Current network ID", networkId);
   }, []);
 
@@ -29,6 +34,7 @@ export default function Dropdown() {
     setnetwork(event.target.value);
     localStorage.setItem("networkId", event.target.value);
     console.log('Current network',localStorage.getItem("networkId"));
+    window.location.reload();
   };
 
   return (
@@ -48,7 +54,7 @@ export default function Dropdown() {
           <MenuItem value={5}><img src={chainimage.goerli} className='chainimg'/>Goerli</MenuItem>
           <MenuItem value={137}><img src={chainimage.matic} className='chainimg'/>Polygon</MenuItem>
           <MenuItem value={42161}><img src={chainimage.arbitrium} className='chainimg'/>Arbitrum</MenuItem>
-          <MenuItem value={30}><img src={chainimage.optimism} className='chainimg'/>Optimism</MenuItem>
+          <MenuItem value={10}><img src={chainimage.optimism} className='chainimg'/>Optimism</MenuItem>
         </Select>
       </FormControl>
     </Box>
