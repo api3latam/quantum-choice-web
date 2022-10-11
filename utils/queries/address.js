@@ -32,11 +32,11 @@ import { getTokenIds } from "../misc";
                 console.log(`tokenIds: ${tokenIds}`); 
                 const tokenUris = 
                     tokenIds.length > 1
-                    ? tokenIds.map( async (token) => {
+                    ? await Promise.all(tokenIds.map( async (token) => {
                         const individualUri = await getTokenUri(token, networkName);
                         const isShinny = token <= 100 ? true: false;
                         return { id: individualUri, shinny: isShinny };
-                    })
+                    }))
                     : [ { id: await getTokenUri(tokenIds[0], networkName),
                             shinny: tokenIds[0] <= 100 ? true: false } ];
                 return tokenUris;
