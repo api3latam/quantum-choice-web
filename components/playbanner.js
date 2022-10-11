@@ -141,10 +141,13 @@ const Banner = () => {
             <div className="text-center">
               <div class="row text-center">
                 <div class="col-lg-12 m-2">
-                  <img src={imageUrl} alt="" className="img-fluid"/>
+                  {isVideo ? (<video class="video-fluid z-depth-1" autoplay loop  muted style={{ width: '200px', height: '600px' }}>
+                    <source src={videoUrl} type="video/mp4" />
+                  </video>):(<img src={imageUrl} alt="" className="img-fluid"/>)}
+                  
                 </div>
                 </div>
-                  {imageUrl === defaultImageUrl ? (<button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>) : (<h1> NFT MINTED </h1>)}
+                  {(imageUrl === defaultImageUrl || videoUrl==='') ? (<button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>) : (<h1> NFT MINTED </h1>)}
             </div>
           </div>
         </section>
