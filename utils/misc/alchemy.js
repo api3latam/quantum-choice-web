@@ -38,6 +38,8 @@ export async function getTokenIds(userAddress, network) {
     const output = filter.map((token) => {
         return token.tokenId 
     });
+
+    output.reverse()
     
     return output;
 };

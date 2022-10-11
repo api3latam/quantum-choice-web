@@ -43,6 +43,7 @@ const Banner = () => {
         if (Number(tokenId[tokenId.length - 1]) > 100) {
           setImageUrl(tokenToSet);
         } else {
+          setImageUrl("");
           setIsVideo(true);
           setVideoUrl(tokenToSet);
         }
