@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
-import Banner from '../components/banner'
-import LatestActivites  from '../components/choicewinners'
+import Banner from '../components/playbanner'
+import LatestActivites  from '../components/latestActivites'
 
 
-export default function Choice() {
+export default function play() {
   
 
   return (
@@ -15,7 +15,7 @@ export default function Choice() {
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <LatestActivites/>
+      <Banner/>
       {/*
 
       <main className={styles.main}>
@@ -71,8 +71,8 @@ export default function Choice() {
           </span>
         </a>
       </footer>
-
        */}
+
     </div>
   )
 }
