@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useState} from 'react'
 import { useWeb3React } from '@web3-react/core'
-
+import Swal from "sweetalert2";
 import { networkIds,
       getImageUrl } from "../utils/misc";
 import { setAddress,
@@ -94,7 +94,12 @@ const Banner = () => {
           if (!hasSigned) {
             await signMessage()
           } else if (hasSigned) {
-            alert("Your NFT is being minted!");
+            Swal.fire({
+              icon: 'info',
+              title: 'You made the choice!',
+              text: 'The NFT is being minted! It will appear the page shortly.',
+              footer: '<a href="https://api3.org/QRNG">Learn about QRNG!</a>'
+            })
           }
       }
       else {

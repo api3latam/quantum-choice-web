@@ -15,12 +15,13 @@ specifiers:
   eslint: 8.23.1
   eslint-config-next: 12.3.1
   ethers: ^5.7.1
-  firebase: ^9.10.0
+  firebase: ^9.11.0
   font-awesome: ^4.7.0
   next: 12.3.1
   react: 18.2.0
   react-bootstrap: ^2.5.0
   react-dom: 18.2.0
+  sweetalert2: ^11.5.0
 
 dependencies:
   '@emotion/react': 11.10.4_react@18.2.0
@@ -41,6 +42,7 @@ dependencies:
   react: 18.2.0
   react-bootstrap: 2.5.0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
+  sweetalert2: 11.5.0
 
 devDependencies:
   eslint: 8.23.1
@@ -4213,6 +4215,10 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  /sweetalert2/11.5.0:
+    resolution: {integrity: sha512-Ret0s0E8HMvGDkcHXnDVd8j7gijpGpuBhasiVzy+QAv+w0uEdFnjLMCfEOrIzbmVgeqxdzc6weBD0nucRGgKuA==}
+    dev: false
 
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
