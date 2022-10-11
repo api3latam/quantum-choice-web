@@ -12,7 +12,8 @@ import { setAddress,
 
 const Banner = () => {
   /**State for image url */
-  const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
+  const defaultImageUrl = 'https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=';
+  const [imageUrl, setImageUrl] = useState(defaultImageUrl);
   const [ chainId, setChainId ] = useState(5);
   const [ isInitialized, setInitialization ] = useState(false);
 
@@ -36,6 +37,7 @@ const Banner = () => {
       if (tokenData.length > 0) {
         const tokenToSet = await getImageUrl(tokenData[0]['id']);
         setImageUrl(tokenToSet);
+
         setInitialization(true);
       }
     }
@@ -124,7 +126,7 @@ const Banner = () => {
                   <img src={imageUrl} alt="" width={300} height={300}/>
                 </div>
                 </div>
-                  <button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>
+                  {imageUrl === defaultImageUrl ? (<button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>) : (<h1> NFT MINTED </h1>)}
             </div>
           </div>
         </section>
