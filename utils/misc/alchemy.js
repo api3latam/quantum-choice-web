@@ -40,6 +40,5 @@ export async function getTokenIds(userAddress, network) {
     });
 
     output.reverse()
-    
     return output;
 };

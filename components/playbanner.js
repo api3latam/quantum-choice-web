@@ -148,7 +148,9 @@ const Banner = () => {
                   
                 </div>
                 </div>
-                  {(imageUrl === defaultImageUrl || videoUrl==='') ? (<button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>) : (<h1> NFT MINTED </h1>)}
+                  {(imageUrl === defaultImageUrl || (imageUrl === '' && videoUrl !== '') ) 
+                  ? (<button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>) 
+                  : (<h1> NFT MINTED </h1>)}
             </div>
           </div>
         </section>
