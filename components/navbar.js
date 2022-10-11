@@ -56,7 +56,7 @@ const Navbar = () => {
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
-                                <a className="navbar-brand" href="/">
+                                <a className="navbar-brand" >
                                     <img src='/images/navbar/Frame.png' />
                                 </a>
 
@@ -68,11 +68,7 @@ const Navbar = () => {
                                             <a className="nav-link"  data-toggle="collapse" data-target="#navbarTogglerDemo01">HOME
                                                 <div className="mr-hover-effect"></div></a></Link>
                                         </li>
-                                        <li class="nav-item">
-                                            <Link href='/play'>
-                                            <a className="nav-link" data-toggle="collapse" data-target="#navbarTogglerDemo01">PLAY
-                                                <div className="mr-hover-effect"></div></a></Link>
-                                        </li>
+
                                        
                                          {active ? (  <li>
                                             <a  class="btnsi ml-auto wallet-btn" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
