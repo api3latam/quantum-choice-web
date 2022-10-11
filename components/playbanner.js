@@ -132,6 +132,7 @@ const Banner = () => {
             <div class="row">
               <div class="col-lg-12">
                 <h4 class="title" >Quantum Choice</h4>
+                <h3 class="text-white">The first on-chain quantum raffle.</h3>
                 <ul class="breadcrumb-list">
 
                 </ul>
@@ -160,15 +161,18 @@ const Banner = () => {
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-10">
                 <div class="section-heading">
-					<div><h5 class="subtitle">QUANTUM CHOICE</h5></div>
+					<div>
+            <h5 class="subtitle">QUANTUM CHOICE</h5>
+            
+          </div>
                   
-				  <div><h2 class="title">Daily Choice</h2></div>
+				  <div><h2 class="title">A DEVCON RAFFLE</h2></div>
                   <div> <p class="text">
-                    If you get the shinny NFT, contact andres@api.org for a surprise!
+                    If you are a lucky winner, send a email to contact@quantumchoice.io!
                   </p></div>
-                  <div> <p class="text">
+                  {/* <div> <p class="text">
                     Now you can enter our raffle! 
-                  </p></div>
+                  </p></div> */}
                 </div>
               </div>
             </div>
