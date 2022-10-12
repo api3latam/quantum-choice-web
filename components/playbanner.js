@@ -12,7 +12,7 @@ import { setAddress,
 
 const Banner = () => {
   /**State for image url */
-  const defaultImageUrl = 'https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=';
+  const defaultImageUrl = 'https://firebasestorage.googleapis.com/v0/b/quantum-choice.appspot.com/o/Group%2070.png?alt=media&token=eb21618c-ca07-470f-a37c-88faaf019a79';
   const [ imageUrl, setImageUrl ] = useState(defaultImageUrl);
   const [ videoUrl, setVideoUrl ] = useState("");
   const [ chainId, setChainId ] = useState(137);
