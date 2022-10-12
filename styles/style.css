@@ -1184,7 +1184,17 @@ element.style p {
   text-align: center;
 
 }
-
+.text-connect{
+  font-family: 'Modeco';
+  font-style: normal;
+  font-size: 22px;
+  background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  mix-blend-mode: normal;
+}
 .banner1-text-support h3 {
 
   width: 573px;
