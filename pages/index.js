@@ -12,7 +12,7 @@ export default function play() {
     <div >
       <Head>
         <title>QUANTUM CHOICE</title>
-        <meta name="description" content="" />
+        <meta name="description" content="The first on-chain quantum raffle." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner/>
