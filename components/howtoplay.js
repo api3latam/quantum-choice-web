@@ -27,15 +27,15 @@ const fullbanner2 = () => {
         </div>
         <div className="banner2-text-list">
           <img src="/images/navbar/_60-2.png" alt=""/>
-          <h3>In a couple minutes the "QTC" NFT will appear above.</h3>
+          <h3>In a couple minutes the Quantum NFT will appear above.</h3>
         </div>
         <div className="banner2-text-list">
           <img src="/images/navbar/_60-2.png" alt=""/>
-          <h3>"Lucky Winner" nft allow you exchange it for a prize.</h3>
+          <h3>"Lucky Winner" NFT will allow you exchange it for a prize.</h3>
         </div>
         <div className="banner2-text-list">
           <img src="/images/navbar/_60-2.png" alt=""/>
-          <h3>Don't worry! You now can enter in a future raffle in the next days</h3>
+          <h3>Not a winner? Don't worry! You now can enter in a future raffle in the next days</h3>
         </div>
         <div className="banner2-tg">
           <img src="/images/banner/Group62.png" alt=""/>
