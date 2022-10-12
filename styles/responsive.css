@@ -183,9 +183,12 @@
 
 @media (max-width: 767px) {
   .question-banner{
-    padding:1.2rem
-  
+    padding:1.2rem 
   }
+  .count-prin{
+      font-size: 2.3rem;
+  }
+  
   .navbar-container .top-header .content {
     display: flow-root;
   }
