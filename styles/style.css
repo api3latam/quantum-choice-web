@@ -1140,8 +1140,213 @@ element.style p {
 }
 
 
+/*Changes of new design*/
+
+.banner-text {
+  text-align: center;
+}
+
+.bg-image-wrapper .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
+
+.banner1-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0%;
+}
+
+.banner1-text img {
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+
+
+
+.banner1-text-support {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.banner1-text-support h3 {
+
+  width: 573px;
+  height: 35px;
+  font-family: 'Modeco';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 29px;
+  line-height: 35px;
+  letter-spacing: 0.11em;
+  background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  mix-blend-mode: normal;
+}
+
+.banner1-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.banner1-qmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.bg-image-wrapper-banner2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.164), rgba(0, 0, 0, 0.247)),url(/images/banner/Imagen.png);
+  background-blend-mode: saturation;
+        box-shadow: inset 0px 0px 300px 300px rgba(8, 8, 8, 0.6);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-image-wrapper-banner2 .container {
+  padding-top: 20vw;
+  padding-bottom: 5vw;
+}
+
+.banner2-tg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: auto;
+  padding-top: 5vw;
+  width: 100%;
+}
+.banner2-tg img{
+  max-width: 90%;
+}
+
+.banner2-text h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 54px;
+  text-align: center;
+  background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.banner2-text-list {
+  display: flex;
+  will-change: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px;
+}
+
+.banner2-text-list img {
+  padding-right: 20px;
+}
+
+.banner2-text-list h3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+
+.banner2-imageGroup .row .col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner2-imageGroup .row .col h3{
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 36px;
+text-align: center;
+background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+
+.banner2-imageGroup{
+  padding-top: 5%;
+}
+
+.banner2-bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 5vw;
+}
+
+.banner2-bottom h3{
+font-style: normal;
+font-weight: 700;
+font-size: 27px;
+line-height: 32px;
+background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+
+.banner2-bottom h1{
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+color: #FFFFFF;
+}
+
+.banner2-bottom h4{
+font-style: normal;
+font-weight: 300;
+font-size: 25px;
+line-height: 30px;
+text-align: center;
+color: #FFFFFF;
+}
+
+.banner2-bottom p{
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+  }
 
 
 

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Navbar from '../components/navbar'
 import Banner from '../components/playbanner'
 import LatestActivites  from '../components/latestActivites'
+import Fullbanner2 from '../components/howtoplay'
 
 
 export default function play() {
@@ -26,6 +27,7 @@ export default function play() {
               `}
           }></script>
       <Banner/>
+      <Fullbanner2/>
       {/*
 
       <main className={styles.main}>
