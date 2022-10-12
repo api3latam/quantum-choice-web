@@ -87,9 +87,7 @@ const Navbar = () => {
                                            
                                         </li>):(  <li>
                                             <a  class="btnsi ml-auto wallet-btn" onClick={connect} data-toggle="modal"> Connect wallet</a>
-                                             <p className="h2 text-white">
-                                                Not connected
-                                            </p>
+                                            
                                         </li>)}
                                          <li class="nav-item">
                                            <Dropdown />
