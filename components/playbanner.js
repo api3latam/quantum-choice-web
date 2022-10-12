@@ -10,6 +10,7 @@ import { setAddress,
       getSignedHash,
       setSignedHash } from '../utils/queries';
 
+      
 const Banner = () => {
   /**State for image url */
   const defaultImageUrl = 'https://firebasestorage.googleapis.com/v0/b/quantum-choice.appspot.com/o/Group%2070.png?alt=media&token=eb21618c-ca07-470f-a37c-88faaf019a79';
