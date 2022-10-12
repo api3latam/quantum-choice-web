@@ -19,7 +19,7 @@ const fullbanner2 = () => {
         </div>
         <div className="banner2-text-list">
           <img src="/images/navbar/_60-2.png" alt=""/>
-          <h3>Click "Mint NFT" (No worries its gasless)</h3>
+          <h3>Click "Mint NFT" (No worries It's gasless)</h3>
         </div>
         <div className="banner2-text-list">
           <img src="/images/navbar/_60-2.png" alt=""/>
@@ -35,7 +35,7 @@ const fullbanner2 = () => {
         </div>
         <div className="banner2-text-list">
           <img src="/images/navbar/_60-2.png" alt=""/>
-          <h3>Not a winner? Don't worry! You now can enter in a future raffle in the next days</h3>
+          <h3>Not a winner? Don't worry! You are now eligible in a future raffle in the next days</h3>
         </div>
         <div className="banner2-tg">
           <img src="/images/banner/Group62.png" alt=""/>
