@@ -15,7 +15,7 @@ const fullbanner2 = () => {
         </div>
         <div className="banner2-text-list">
           <img src="/images/navbar/_60-2.png" alt=""/>
-          <h3>Choose ypur netrwork & connect your wallet</h3>
+          <h3>Choose your network & connect your wallet</h3>
         </div>
         <div className="banner2-text-list">
           <img src="/images/navbar/_60-2.png" alt=""/>
