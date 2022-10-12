@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const fullbanner = () => {
+const Fullbanner = () => {
 
  
   
@@ -29,4 +29,4 @@ const fullbanner = () => {
   );
 };
 
-export default fullbanner;
+export default Fullbanner;

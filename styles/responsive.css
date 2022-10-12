@@ -182,7 +182,10 @@
 }
 
 @media (max-width: 767px) {
+  .question-banner{
+    padding:1.2rem
   
+  }
   .navbar-container .top-header .content {
     display: flow-root;
   }

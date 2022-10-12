@@ -125,21 +125,11 @@ const Banner = () => {
   return (
     <div>
       <div className="banner-area">
-        <section class="breadcrumb-area bc-lottery">
+        <section class="question-banner">
           {/* <img class="bc-img" src="/images/navbar/096_GoldenAwards1.png" alt=""/>*/}
 
           <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div className="banner1-text">
-                  <img src="/images/banner/54_1.png" alt="" className="img-fluid"/>
-                </div>
-                <div className="banner1-text-support">
-                    <h3>The first On-Chain Quantum Raffle</h3>
-                </div>
-             
-              </div>
-            </div>
+         
             <div className="text-center">
               <div class="row text-center">
                 <div class="col-lg-12 m-2">

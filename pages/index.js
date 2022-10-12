@@ -4,7 +4,7 @@ import Navbar from '../components/navbar'
 import Banner from '../components/playbanner'
 import LatestActivites  from '../components/latestActivites'
 import Fullbanner2 from '../components/howtoplay'
-
+import Fullbanner from '../components/firstbanner'
 
 export default function play() {
   
@@ -26,6 +26,7 @@ export default function play() {
                   gtag("config", "G-G2SLZRDG2P");
               `}
           }></script>
+      <Fullbanner/>
       <Banner/>
       <Fullbanner2/>
       {/*
