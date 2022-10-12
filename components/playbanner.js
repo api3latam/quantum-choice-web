@@ -105,8 +105,8 @@ const Banner = () => {
           } else if (hasSigned) {
             Swal.fire({
               icon: 'info',
-              title: 'You made the choice!',
-              text: 'The NFT is being minted! It will appear the page shortly.',
+              title: 'You entered a quantum raffle!',
+              text: 'Your Quantum NFT is being minted! Your NFT will appear in a few minutes.',
               footer: '<a href="https://api3.org/QRNG">Learn about QRNG!</a>'
             })
           }
