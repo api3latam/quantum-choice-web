@@ -79,6 +79,9 @@ const Navbar = () => {
                                             <a className="nav-link"  data-toggle="collapse" data-target="#navbarTogglerDemo01">HOME
                                                 <div className="mr-hover-effect"></div></a></Link>
                                         </li>
+                                        <li class="nav-item">
+                                           <Dropdown />
+                                        </li>
 
                                        
                                          {active ? (  <li>
@@ -89,9 +92,7 @@ const Navbar = () => {
                                             <a  class="btnsi ml-auto wallet-btn" onClick={connect} data-toggle="modal"> Connect wallet</a>
                                             
                                         </li>)}
-                                         <li class="nav-item">
-                                           <Dropdown />
-                                        </li>
+                                         
                                     </ul>
 
                                 </div>

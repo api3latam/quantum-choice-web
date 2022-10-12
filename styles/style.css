@@ -482,7 +482,7 @@ p {
   color: #fff;
   font-size: 18px;
   font-weight: 400;
-  padding: 1rem 2.5rem 1rem 1rem;
+  padding: .7rem 2.5rem .7rem 1rem;
   background: linear-gradient(180deg,
       #bc923a 0%,
       #ffdf94 53%,
@@ -1266,7 +1266,7 @@ element.style p {
   margin-top: 3rem;
 }
 .wallet-btn{
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
