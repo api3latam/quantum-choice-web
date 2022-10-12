@@ -83,9 +83,8 @@ const Navbar = () => {
                                        
                                          {active ? (  <li>
                                             <a  class="btnsi ml-auto wallet-btn" onClick={disconnect} data-toggle="modal"> Disconnect wallet</a>
-                                            <p className="h2 text-white">
-                                                Connected with <b>{shortenAddress(account)}</b>
-                                            </p>
+                                               <a  class="btnsi ml-auto wallet-btn" >{shortenAddress(account)}</a>
+                                           
                                         </li>):(  <li>
                                             <a  class="btnsi ml-auto wallet-btn" onClick={connect} data-toggle="modal"> Connect wallet</a>
                                              <p className="h2 text-white">

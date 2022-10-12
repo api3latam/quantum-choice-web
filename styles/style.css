@@ -1258,6 +1258,12 @@ element.style p {
   background-clip: text;
   text-fill-color: transparent;
 }
+.wallet-btn{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 
 .banner2-text-list {
   display: flex;
