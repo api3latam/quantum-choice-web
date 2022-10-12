@@ -11,11 +11,11 @@ export function getAddresses(networkName) {
             raffle: ""
         },
         optimism: {
-            nft: "",
+            nft: "0x0904593F8886f20761f9610aBc8789B86ad386f3",
             raffle: ""
         },
         arbitrum: {
-            nft: "",
+            nft: "0x0904593F8886f20761f9610aBc8789B86ad386f3",
             raffle: ""
         }
     }
