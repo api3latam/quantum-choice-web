@@ -55,7 +55,7 @@ const fullbanner2 = () => {
       <div className="banner2-bottom">
         <h3>Quantum Choice</h3>
         <h1>A Devcon Raffle</h1>
-        <h4>If you are a lucky winner, send a email to</h4>
+        <h4>If you are a lucky winner, send an email to</h4>
         <p>contact@quantumchoice.io</p>
       </div> 
       </div>  
