@@ -132,7 +132,7 @@ const Banner = () => {
             <div class="row">
               <div class="col-lg-12">
                 <div className="banner1-text">
-                  <img src="/images/banner/54_1.png" alt=""/>
+                  <img src="/images/banner/54_1.png" alt="" className="img-fluid"/>
                 </div>
                 <div className="banner1-text-support">
                     <h3>The first On-Chain Quantum Raffle</h3>
