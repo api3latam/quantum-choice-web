@@ -23,11 +23,11 @@ const fullbanner2 = () => {
         </div>
         <div className="banner2-text-list">
           <img src="/images/navbar/_60-2.png" alt=""/>
-          <h3>You're calling a Quantum chance to nwin a especial NFT</h3>
+          <h3>You're calling a Quantum chance to win a especial NFT</h3>
         </div>
         <div className="banner2-text-list">
           <img src="/images/navbar/_60-2.png" alt=""/>
-          <h3>In a couple minutes the Quantum NFT will appear above.</h3>
+          <h3>In a couple of minutes the Quantum NFT will appear above.</h3>
         </div>
         <div className="banner2-text-list">
           <img src="/images/navbar/_60-2.png" alt=""/>
