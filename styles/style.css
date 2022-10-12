@@ -7,7 +7,7 @@ body {
 }
 
 html {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Modeco","Gudea","Open Sans", sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   overflow-x: hidden;
@@ -1196,6 +1196,7 @@ element.style p {
   background-clip: text;
   text-fill-color: transparent;
   mix-blend-mode: normal;
+  margin-bottom: 2rem;
 }
 
 .banner1-btn {
