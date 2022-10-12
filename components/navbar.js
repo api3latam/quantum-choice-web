@@ -17,7 +17,6 @@ const Navbar = () => {
     
     useEffect(() => {
        const wc = localStorage.getItem('walletconnect');
-       console.log('Wallet Connect', wc);  
        
     }, []);
     async function connect() {
