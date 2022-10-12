@@ -41,7 +41,7 @@ export default function Dropdown() {
      * Add styling to the dropdown menu
      */
     <Box sx={{ minWidth: 120 }} className='dropdown-box'>
-      <FormControl fullWidth color='primary' margin='normal' id='formcntrl'>
+      <FormControl fullWidth  id='formcntrl'>
         <Select
           labelId="network-select"
           id="network-id"

@@ -36,9 +36,22 @@
 }
 
 @media (max-width: 991px) {
-
+  #network-id{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    padding: .6rem 2.5rem .6rem 1rem;
+    background: linear-gradient(180deg,
+        #bc923a 0%,
+        #ffdf94 53%,
+        #cfaa59 85%,
+        #9f8d63 100%);
+    border-radius: 2rem;
+  }
+  #formcntrl{
+    margin-left: 6px;
+  }
   
-
   .navbar-container  .navbar-area .navbar .navbar-brand{
     padding-top: 10px;
   }
