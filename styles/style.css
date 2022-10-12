@@ -483,7 +483,12 @@ p {
   font-size: 18px;
   font-weight: 400;
   padding: 1rem 2.5rem 1rem 1rem;
-  background-color: #2d3345;
+  background: linear-gradient(180deg,
+      #bc923a 0%,
+      #ffdf94 53%,
+      #cfaa59 85%,
+      #9f8d63 100%);
+  border-radius: 2rem;
 }
 .chainimg{
   width: 30px;

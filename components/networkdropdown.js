@@ -42,7 +42,6 @@ export default function Dropdown() {
      */
     <Box sx={{ minWidth: 120 }} className='dropdown-box'>
       <FormControl fullWidth color='primary' margin='normal' id='formcntrl'>
-        <InputLabel id="network-select">Network</InputLabel>
         <Select
           labelId="network-select"
           id="network-id"
