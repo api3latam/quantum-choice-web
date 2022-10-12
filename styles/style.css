@@ -1230,7 +1230,7 @@ element.style p {
 }
 
 .bg-image-wrapper-banner2 .container {
-  padding-top: 20vw;
+  padding-top: 10vw;
   padding-bottom: 5vw;
 }
 
@@ -1257,6 +1257,8 @@ element.style p {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 .wallet-btn{
   margin-top: 1rem;
