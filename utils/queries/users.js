@@ -7,8 +7,6 @@ const networkQuerySetter = (networkName) => {
         return { optimism: false }
     } else if (networkName === "arbitrum") {
         return { arbitrum: false }
-    } else if (networkName === "goerli") {
-        return { goerli: false }
     } else {
         throw Error(`The given network ${networkName} is not available`);
     }
@@ -21,8 +19,6 @@ const networkQueryAppend = (networkName) => {
         return { 'minted.optimism': false }
     } else if (networkName === "arbitrum") {
         return { 'minted.arbitrum': false }
-    } else if (networkName === "goerli") {
-        return { 'minted.goerli': false }
     } else {
         throw Error(`The given network ${networkName} is not available`);
     }
@@ -38,8 +34,6 @@ const networkSignedAppend = (
         return { 'signature.optimism': signature }
     } else if (networkName === "arbitrum") {
         return { 'signature.arbitrum': signature }
-    } else if (networkName === "goerli") {
-        return { 'signature.goerli': signature }
     } else {
         throw Error(`The given network ${networkName} is not available`);
     }

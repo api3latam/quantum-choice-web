@@ -17,10 +17,6 @@ export function getAddresses(networkName) {
         arbitrum: {
             nft: "",
             raffle: ""
-        },
-        goerli: {
-            nft: "0x961F8787035c2280479589DaB31BdD7186a8B577",
-            raffle: ""
         }
     }
     return { 
@@ -44,11 +40,6 @@ const getProvider = (network) => {
         return new providers.JsonRpcProvider(
             networkIds[42161].rpc
             + process.env['NEXT_PUBLIC_ARBITRUM']
-        )
-    } else if (network === "goerli") {
-        return new providers.JsonRpcProvider(
-            networkIds[5].rpc
-            + process.env['NEXT_PUBLIC_GOERLI']
         )
     } else {
         throw Error(`The given network ${network} is not enable`);

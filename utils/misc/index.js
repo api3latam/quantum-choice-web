@@ -13,9 +13,5 @@ export const networkIds = {
     42161: {
         name: "arbitrum",
         rpc: "https://arb-mainnet.g.alchemy.com/v2/"
-    },
-    5: {
-        name: "goerli",
-        rpc: "https://eth-goerli.g.alchemy.com/v2/"
     }
 }

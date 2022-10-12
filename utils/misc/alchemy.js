@@ -12,9 +12,6 @@ const alchemyConfigs = (networkName) => {
     } else if (networkName === "arbitrum") {
         return { apiKey: process.env['NEXT_PUBLIC_ARBITRUM'] ,
             network: Network.ARB_MAINNET}
-    } else if (networkName === "goerli") {
-        return { apiKey: process.env['NEXT_PUBLIC_GOERLI'],
-            network: Network.ETH_GOERLI }
     } else {
         throw Error(`The given network ${networkName} is not available`);
     }

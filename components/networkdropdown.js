@@ -10,7 +10,6 @@ export default function Dropdown() {
   const [network, setnetwork] = useState(137);
   
   const chainimage = {
-    goerli:'https://chainlist.org/_next/image?url=%2Funknown-logo.png&w=32&q=75',
     matic:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_polygon.jpg&w=32&q=75',
     arbitrium:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_arbitrum.jpg&w=32&q=75',
     optimism:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_optimism.jpg&w=32&q=75'
@@ -51,7 +50,6 @@ export default function Dropdown() {
           label="network"
           onChange={handleChange}
         >
-          <MenuItem value={5}><img src={chainimage.goerli} className='chainimg'/>Goerli</MenuItem>
           <MenuItem value={137}><img src={chainimage.matic} className='chainimg'/>Polygon</MenuItem>
           <MenuItem value={42161}><img src={chainimage.arbitrium} className='chainimg'/>Arbitrum</MenuItem>
           <MenuItem value={10}><img src={chainimage.optimism} className='chainimg'/>Optimism</MenuItem>
