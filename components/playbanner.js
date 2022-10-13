@@ -147,7 +147,7 @@ const Banner = () => {
                 </div>
                   {(imageUrl === defaultImageUrl || (imageUrl === '' && videoUrl === '') ) 
                   ? (<button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>) 
-                  : (<h1 className="text-white"> View on OpenSea! </h1>)}
+                  : (<a class="btn-opensea ml-auto" href={openseaLink} target='_blank'> View on open Sea</a>)} 
             </div>
           </div>
         </section>
