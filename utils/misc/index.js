@@ -1,5 +1,4 @@
-export * from "./ipfs";
-export * from "./alchemy";
+import { getAddresses } from "../contracts";
 
 export const networkIds = {
     137: {
@@ -15,3 +14,12 @@ export const networkIds = {
         rpc: "https://arb-mainnet.g.alchemy.com/v2/"
     }
 }
+
+export const openseaUrls = {
+    polygon: `https://opensea.io/assets/matic/${getAddresses('polygon')['nftAddress']}/`,
+    optimism: `https://opensea.io/assets/optimism/${getAddresses('optimism')['nftAddress']}/`,
+    arbitrum: `https://opensea.io/assets/arbitrum/${getAddresses('arbitrum')['nftAddress']}/`
+}
+
+export * from "./ipfs";
+export * from "./alchemy";
