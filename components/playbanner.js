@@ -4,7 +4,8 @@ import { useState} from 'react'
 import { useWeb3React } from '@web3-react/core'
 import Swal from "sweetalert2";
 import { networkIds,
-      getImageUrl } from "../utils/misc";
+      getImageUrl,
+      openseaUrls } from "../utils/misc";
 import { setAddress,
       getTokenStatus,
       getSignedHash,
@@ -18,6 +19,7 @@ const Banner = () => {
   const [ chainId, setChainId ] = useState(137);
   const [ isInitialized, setInitialization ] = useState(false);
   const [ isVideo, setIsVideo ] = useState(false);
+  const [ openseaLink, setOpenseaLink] = useState("");
 
   const { active, account } = useWeb3React();
 
@@ -47,6 +49,9 @@ const Banner = () => {
           setIsVideo(true);
           setVideoUrl(tokenToSet);
         }
+        const openSea = `${openseaUrls[network]}${Number(tokenId[tokenId.length - 1])}`;
+        setOpenseaLink(openSea);
+        console.log(openSea);
         setInitialization(true);
       }
     }
@@ -150,7 +155,7 @@ const Banner = () => {
                 </div>
                   {(imageUrl === defaultImageUrl || (imageUrl === '' && videoUrl === '') ) 
                   ? (<button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>) 
-                  : (<h1 className="text-white"> NFT MINTED </h1>)}
+                  : (<h1 className="text-white"> View on OpenSea! </h1>)}
             </div>
           </div>
         </section>
