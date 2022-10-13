@@ -96,6 +96,15 @@ const Navbar = () => {
                                     </ul>
 
                                 </div>
+                                <a className="navbar-brand2" href='https://twitter.com/API3Latam'>
+                                    <img src='/images/navbar/icon-tw.png' />
+                                </a>
+                                <a className="navbar-brand2" href='https://qrng.anu.edu.au/' >
+                                    <img src='/images/navbar/logo-qr.png' />
+                                </a>
+                                <a className="navbar-brand2" href='https://api3.org/QRNG'>
+                                    <img src='/images/navbar/api3qrng.png' />
+                                </a>
                             </div>
                         </nav>
                     </div>

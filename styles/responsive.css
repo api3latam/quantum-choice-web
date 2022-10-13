@@ -182,6 +182,9 @@
 }
 
 @media (max-width: 767px) {
+  .navbar-brand2{
+    display: none;
+  }
   .question-banner{
     padding:1.2rem 
   }

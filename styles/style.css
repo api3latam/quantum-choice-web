@@ -1247,6 +1247,9 @@ element.style p {
   mix-blend-mode: normal;
   margin-bottom: 2rem;
 }
+.navbar-brand2{
+    margin-left: .5rem; 
+  }
 .count-prin{
   /* 03D : 08H : 48M : 88S */
 
