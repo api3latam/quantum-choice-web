@@ -67,6 +67,64 @@ const Fullbanner = () => {
             
           </div>
         </section>
+            <section className="lottery-area">
+        <div class="lottery-staticstics">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="single-staticstics">
+                  <div class="left">
+                    <div class="icon">
+                      <img src="/images/navbar/_17-2.png" />
+                    </div>
+                  </div>
+                  {/* TODO: ADD NETWORKS LOGO*/}
+                  <div class="right">
+                    <h4 class="title">Polygon</h4>
+                    <div class="count">
+                        <img src="/images/banner/Group50.png" />
+                        <span>1.4888</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="single-staticstics">
+                  <div class="left">
+                    <div class="icon">
+                      <img src="/images/banner/vectorticket.png" />
+                    </div>
+                  </div>
+                  <div class="right">
+                    <h4 class="title">Optimism</h4>
+                    <div class="count">
+                      <img src="/images/banner/Group50.png" />
+                      <span>120</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="single-staticstics">
+                  <div class="left">
+                    <div class="icon">
+                      <img src="/images/banner/vectorticket.png" />
+                    </div>
+                  </div>
+                  <div class="right">
+                    <h4 class="title">Arbitrium</h4>
+                    <div class="count">
+                      <img src="/images/banner/Group50.png" />
+                      <span>02</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
       </div>
 
      
