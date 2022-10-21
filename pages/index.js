@@ -28,6 +28,7 @@ export default function play() {
           }></script>
       <Fullbanner/>
       <Banner/>
+      <LatestActivites/>
       {/*
 
       <main className={styles.main}>

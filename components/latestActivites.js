@@ -71,186 +71,74 @@ const LatestActivites = () => {
 			<div className="container">
 				<div class="table-responsive">
 					<table class="table table-activities">
+					{/* TODO: ADD NETWORKS LOGO*/}
+
 						<thead class="table-secolor">
 							<tr>
-								<th scope="col">User</th>
-								<th scope="col">Choice Number</th>
-								<th scope="col">Choice</th>
+								<th scope="col">Address</th>
+								<th scope="col">Network</th>
+								<th scope="col">ID</th>
+								<th scope="col">Time</th>
+
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 
 								<td>
-									<img src="/images/banner/images1.png" alt="" />
-									Tom Siuu
+									0X0SXS...12312
 								</td>
 								<td>
-									<ul class="number-list">
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-									</ul>
+									polygon
 								</td>
-								<td>01</td>
+								<td>TXT321</td>
+								<td>12:00:00</td>
 							</tr>
 							<tr>
 
 								<td>
-									<img src="/images/banner/images1.png" alt="" />
-									Tom Siuu
+									0X0SXS...12312
 								</td>
 								<td>
-									<ul class="number-list">
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-									</ul>
+									polygon
 								</td>
-								<td>01</td>
+								<td>TXT321</td>
+								<td>12:00:00</td>
 							</tr>
 							<tr>
 
 								<td>
-									<img src="/images/banner/images1.png" alt="" />
-									Tom Siuu
+									0X0SXS...12312
 								</td>
 								<td>
-									<ul class="number-list">
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-									</ul>
+									polygon
 								</td>
-								<td>01</td>
-							</tr>
-
-							<tr>
-
-								<td>
-									<img src="/images/banner/images1.png" alt="" />
-									Tom Siuu
-								</td>
-								<td>
-									<ul class="number-list">
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-									</ul>
-								</td>
-								<td>01</td>
+								<td>TXT321</td>
+								<td>12:00:00</td>
 							</tr>
 							<tr>
 
 								<td>
-									<img src="/images/banner/images1.png" alt="" />
-									Tom Siuu
+									0X0SXS...12312
 								</td>
 								<td>
-									<ul class="number-list">
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-									</ul>
+									polygon
 								</td>
-								<td>01</td>
+								<td>TXT321</td>
+								<td>12:00:00</td>
 							</tr>
 							<tr>
 
 								<td>
-									<img src="/images/banner/images1.png" alt="" />
-									Tom Siuu
+									0X0SXS...12312
 								</td>
 								<td>
-									<ul class="number-list">
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-									</ul>
+									polygon
 								</td>
-								<td>01</td>
+								<td>TXT321</td>
+								<td>12:00:00</td>
 							</tr>
-							<tr>
-
-								<td>
-									<img src="/images/banner/images1.png" alt="" />
-									Tom Siuu
-								</td>
-								<td>
-									<ul class="number-list">
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-									</ul>
-								</td>
-								<td>01</td>
-							</tr>
-							<tr>
-
-								<td>
-									<img src="/images/banner/images1.png" alt="" />
-									Tom Siuu
-								</td>
-								<td>
-									<ul class="number-list">
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-									</ul>
-								</td>
-								<td>01</td>
-							</tr>
-							<tr>
-
-								<td>
-									<img src="/images/banner/images1.png" alt="" />
-									Tom Siuu
-								</td>
-								<td>
-									<ul class="number-list">
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-									</ul>
-								</td>
-								<td>01</td>
-							</tr>
-
-							<tr>
-
-								<td>
-									<img src="/images/banner/images1.png" alt="" />
-									Tom Siuu
-								</td>
-								<td>
-									<ul class="number-list">
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-										<li>24</li>
-									</ul>
-								</td>
-								<td>01</td>
-							</tr>
+							
 						</tbody>
 					</table>
 				</div>
