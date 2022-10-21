@@ -80,6 +80,11 @@ const Navbar = () => {
                                                 <div className="mr-hover-effect"></div></a></Link>
                                         </li>
                                         <li class="nav-item">
+                                            <Link href='/howto'>
+                                            <a className="nav-link"  data-toggle="collapse" data-target="#navbarTogglerDemo01">HOW TO PLAY
+                                                <div className="mr-hover-effect"></div></a></Link>
+                                        </li>
+                                        <li class="nav-item">
                                            <Dropdown />
                                         </li>
 
