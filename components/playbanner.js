@@ -1,39 +1,76 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useState} from 'react'
 import { useWeb3React } from '@web3-react/core'
-
+import Swal from "sweetalert2";
 import { networkIds,
-      getImageUrl } from "../utils/misc";
+      getImageUrl,
+      openseaUrls } from "../utils/misc";
 import { setAddress,
-      getTokenStatus } from '../utils/queries';
+      getTokenStatus,
+      getSignedHash,
+      setSignedHash } from '../utils/queries';
 
+      
 const Banner = () => {
   /**State for image url */
-  const [imageUrl, setImageUrl] = useState('https://media.istockphoto.com/photos/question-mark-gold-3d-rendering-illustration-picture-id913510910?k=20&m=913510910&s=170667a&w=0&h=spNaqEvljoCmctQNfs7WKbvnSnc5dz7kDfjiAN5PZlM=');
+  const defaultImageUrl = 'https://firebasestorage.googleapis.com/v0/b/quantum-choice.appspot.com/o/Group%2070.png?alt=media&token=eb21618c-ca07-470f-a37c-88faaf019a79';
+  const [ imageUrl, setImageUrl ] = useState(defaultImageUrl);
+  const [ videoUrl, setVideoUrl ] = useState("");
+  const [ chainId, setChainId ] = useState(137);
+  const [ isInitialized, setInitialization ] = useState(false);
+  const [ isVideo, setIsVideo ] = useState(false);
+  const [ openseaLink, setOpenseaLink] = useState("");
 
-  const { active, account,
-    library,
-    chainId } = useWeb3React();
+  const { active, account } = useWeb3React();
+
+  let network = "polygon";
+  useEffect(() => {
+    const chain = localStorage.getItem('networkId');
+
+    console.log('Use Effect - PlayBanner', chain);
+    if (chain) {
+      setChainId(parseInt(chain));
+      initialization();
+    }
+  }, []);
+
+  const initialization = async () => {
+    if ( !isInitialized ) {
+      network = networkIds[chainId].name;
+      const tokenData = await getTokenStatus(account, network) || [];
+      if (tokenData.length > 0) {
+        const targetTokenid = tokenData[tokenData.length - 1]['id'];
+        const tokenToSet = await getImageUrl(targetTokenid);
+        const tokenId = targetTokenid.split('/');
+        if (Number(tokenId[tokenId.length - 1]) > 100) {
+          setImageUrl(tokenToSet);
+        } else {
+          setImageUrl("");
+          setIsVideo(true);
+          setVideoUrl(tokenToSet);
+        }
+        const openSea = `${openseaUrls[network]}${Number(tokenId[tokenId.length - 1])}`;
+        setOpenseaLink(openSea);
+        console.log(openSea);
+        setInitialization(true);
+      }
+    }
+  }
 
   if (active) {
-    const network = networkIds[chainId].name;
-    const tokenData = getTokenStatus(account, network)
-    if (tokenData) {
-      const tokenToSet = getImageUrl(tokenData[-1]['id']);
-      setImageUrl(tokenToSet);
-    }
+    initialization();
   };
-
-  const signatureMessage = "Sign to get your NFT!";
 
   const signMessage = async () => {
     try {
-      const signature = await library.provider.request({
-        method: "personal_sign",
-        params: [signatureMessage, account]
-      });
-      localStorage.setItem(signedHash, signature);
+      const signedMessage = account + network
+
+      await setSignedHash(
+        account,
+        network, 
+        signedMessage
+      );
     } catch (err) {
       console.error(err);
     }
@@ -41,12 +78,19 @@ const Banner = () => {
 
   const verifyMessage = async () => {
     try {
-      
-      const hashSignature = localStorage?.getItem("signedHash") || ""
-      const verify = await library.provider.request({
-        method: "personal_ecRecover",
-        params: [signatureMessage, hashSignature]
-      });
+      let verify;
+
+      const hashSignature = await getSignedHash(
+        account, 
+        network
+      ) || false;
+
+      if (hashSignature) {
+        verify = hashSignature === account+network 
+          ? hashSignature 
+          : undefined;
+      }
+
       return verify === undefined ? false : verify;
     } catch (err) {
       console.error(err);
@@ -55,21 +99,31 @@ const Banner = () => {
 
     
   // Add the current user's address to the database
-  const addAddress = () => {
+  const addAddress = async () => {
       // TODO: Change alerys with proper UI.
       // Check if wallet is connected
-      const hasSigned = verifyMessage();
+      const hasSigned = await verifyMessage();
       if (localStorage?.getItem("isWalletConnected") === "true") {
           // Add the address to the database
-          const network = networkIds[chainId];
-          setAddress(account, network);
+          await setAddress(account, network);
           if (!hasSigned) {
-            signMessage()
+            await signMessage()
+          } else if (hasSigned) {
+            Swal.fire({
+              icon: 'info',
+              title: 'You entered a quantum raffle!',
+              text: 'Your Quantum NFT is being minted! Your NFT will appear in a few minutes.',
+              footer: '<a href="https://api3.org/QRNG">Learn about QRNG!</a>'
+            })
           }
       }
       else {
           // Popup to connect wallet
-          alert("Please connect your wallet to continue");
+           Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Connect your wallet to continue',
+          })
       }
   };
 
@@ -77,54 +131,29 @@ const Banner = () => {
   return (
     <div>
       <div className="banner-area">
-        <section class="breadcrumb-area bc-lottery">
+        <section class="question-banner">
           {/* <img class="bc-img" src="/images/navbar/096_GoldenAwards1.png" alt=""/>*/}
 
           <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <h4 class="title" >Quantum Choice</h4>
-                <ul class="breadcrumb-list">
-
-                </ul>
-             
-              </div>
-            </div>
+         
             <div className="text-center">
               <div class="row text-center">
                 <div class="col-lg-12 m-2">
-                  <img src={imageUrl} alt="" width={300} height={300}/>
+                  {isVideo ? (<video class="video-fluid z-depth-1" autoplay loop controls muted style={{ width: '250px', height: '400px' }}>
+                    <source src={videoUrl} type="video/mp4" />
+                  </video>):(<img src={imageUrl} alt="" className="img-fluid"/>)}
+                  
                 </div>
                 </div>
-                  <button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>
+                  {(imageUrl === defaultImageUrl || (imageUrl === '' && videoUrl === '') ) 
+                  ? (<button class="btnsi ml-auto" onClick={addAddress} > MINT NFT</button>) 
+                  : (<a class="btn-opensea ml-auto" href={openseaLink} target='_blank'> View on open Sea</a>)} 
             </div>
           </div>
         </section>
       </div>
 
-      <section className="lottery-area">
-        
-        <div class="daily-lottery">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8 col-md-10">
-                <div class="section-heading">
-					<div><h5 class="subtitle">QUANTUM CHOICE</h5></div>
-                  
-				  <div><h2 class="title">Daily Choice</h2></div>
-                  <div> <p class="text">
-                    If you get the shinny NFT, contact andres@api.org for a surprise!
-                  </p></div>
-                  <div> <p class="text">
-                    Now you can enter our raffle! 
-                  </p></div>
-                </div>
-              </div>
-            </div>
-           
-          </div>
-        </div>
-      </section>
+     
     </div>
   );
 };

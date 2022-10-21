@@ -1,33 +1,21 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
-import Banner from '../components/playbanner'
-import LatestActivites  from '../components/latestActivites'
-import Fullbanner2 from '../components/howtoplay'
-import Fullbanner from '../components/firstbanner'
+import Banner from '../components/banner'
+import LatestActivites  from '../components/choicewinners'
 
-export default function play() {
+
+export default function Choice() {
   
 
   return (
     <div >
       <Head>
         <title>QUANTUM CHOICE</title>
-        <meta name="description" content="The first on-chain quantum raffle." />
+        <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-         {/* Google Analytics */}
-       <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2SLZRDG2P"></script>
-          <script dangerouslySetInnerHTML={
-              { __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){window.dataLayer.push(arguments)}
-                  gtag("js", new Date());
-                  gtag("config", "G-G2SLZRDG2P");
-              `}
-          }></script>
-      <Fullbanner/>
-      <Banner/>
+      <LatestActivites/>
       {/*
 
       <main className={styles.main}>
@@ -83,8 +71,8 @@ export default function play() {
           </span>
         </a>
       </footer>
-       */}
 
+       */}
     </div>
   )
 }

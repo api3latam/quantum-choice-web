@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
 import Banner from '../components/banner'
-import LatestActivites  from '../components/choicewinners'
+import LatestActivites  from '../components/latestActivites'
 
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar/>
+      <Banner/>
       <LatestActivites/>
       {/*
 

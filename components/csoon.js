@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const fullbanner = () => {
+const Fullbanner = () => {
 
  
   
@@ -24,22 +24,9 @@ const fullbanner = () => {
        
        </div>
 
-       <div className="cs-logo">
-        <img src="/images/navbar/logo-qrng2.png" alt="Logo1"
-        quality="100"
-        max-width={120}
-        height={100}
-        layout="responsive"/>
-
-        <img src="/images/navbar/banner-qrng1.png" alt="Logo2"
-        quality="100"
-        width={120}
-        height={100}
-        layout="responsive"/>
-
-        </div>
+      
     </div>
   );
 };
 
-export default fullbanner;
+export default Fullbanner;

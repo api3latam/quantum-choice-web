@@ -36,9 +36,22 @@
 }
 
 @media (max-width: 991px) {
-
+  #network-id{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    padding: .6rem 2.5rem .6rem 1rem;
+    background: linear-gradient(180deg,
+        #bc923a 0%,
+        #ffdf94 53%,
+        #cfaa59 85%,
+        #9f8d63 100%);
+    border-radius: 2rem;
+  }
+  #formcntrl{
+    margin-left: 6px;
+  }
   
-
   .navbar-container  .navbar-area .navbar .navbar-brand{
     padding-top: 10px;
   }
@@ -169,6 +182,15 @@
 }
 
 @media (max-width: 767px) {
+  .navbar-brand2{
+    display: none;
+  }
+  .question-banner{
+    padding:1.2rem 
+  }
+  .count-prin{
+      font-size: 2.3rem;
+  }
   
   .navbar-container .top-header .content {
     display: flow-root;
@@ -201,7 +223,24 @@
     padding: 230px 0px 94px;
   }
 
-  
+  .banner1-text-support h3 {
+
+
+    font-family: 'Gudea';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 35px;
+    letter-spacing: 0.11em;
+    background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    mix-blend-mode: normal;
+    margin-bottom: 2rem;
+  }
+
 
 }
 @media (max-width: 588px) {

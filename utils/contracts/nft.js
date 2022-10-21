@@ -6,8 +6,8 @@ import { convertLinkToIpfs } from "../misc";
  * tokenURI based on a given id.
  * @param targetId The onchain tokenId 
  */
-export async function getTokenUri(targetId) {
-    const { nft } = await getContracts();
+export async function getTokenUri(targetId, networkName) {
+    const { nft } = await getContracts(networkName);
 
     const url = await nft.tokenURI(targetId);
     return convertLinkToIpfs(url);

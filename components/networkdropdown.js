@@ -8,26 +8,40 @@ import Select from '@mui/material/Select';
 export default function Dropdown() {
 
   const [network, setnetwork] = useState(137);
+  
+  const chainimage = {
+    matic:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_polygon.jpg&w=32&q=75',
+    arbitrium:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_arbitrum.jpg&w=32&q=75',
+    optimism:'https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_optimism.jpg&w=32&q=75'
+  }
 
   useEffect(() => {
+    const networkId = localStorage.getItem("networkId"); 
+    
+    if (networkId) {
+      setnetwork(networkId);
+      localStorage.setItem("networkId", networkId);
+    }
     //set network id to local storage
-    localStorage.setItem("networkId", network);
-   
+    
+    //Get network id from local storage
+    console.log("Current network ID", networkId);
   }, []);
 
   
   const handleChange = (event) => {
     setnetwork(event.target.value);
     localStorage.setItem("networkId", event.target.value);
+    console.log('Current network',localStorage.getItem("networkId"));
+    window.location.reload(false);
   };
 
   return (
     /**TODO:
      * Add styling to the dropdown menu
      */
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="network-select">network</InputLabel>
+    <Box sx={{ minWidth: 120 }} className='dropdown-box'>
+      <FormControl fullWidth  id='formcntrl'>
         <Select
           labelId="network-select"
           id="network-id"
@@ -35,11 +49,9 @@ export default function Dropdown() {
           label="network"
           onChange={handleChange}
         >
-          <MenuItem value={1}>Ethereum</MenuItem>
-          <MenuItem value={5}>Goerli</MenuItem>
-          <MenuItem value={137}>Polygon</MenuItem>
-          <MenuItem value={42161}>Arbitrum</MenuItem>
-          <MenuItem value={30}>RSK</MenuItem>
+          <MenuItem value={137}><img src={chainimage.matic} className='chainimg'/>Polygon</MenuItem>
+          <MenuItem value={42161}><img src={chainimage.arbitrium} className='chainimg'/>Arbitrum</MenuItem>
+          <MenuItem value={10}><img src={chainimage.optimism} className='chainimg'/>Optimism</MenuItem>
         </Select>
       </FormControl>
     </Box>

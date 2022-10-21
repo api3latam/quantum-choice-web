@@ -1,12 +1,13 @@
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Modeco","Gudea","Open Sans", sans-serif;
+  
   font-size: 18px;
   margin: 0;
   overflow-x: hidden;
 }
 
 html {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Modeco","Gudea","Open Sans", sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   overflow-x: hidden;
@@ -23,6 +24,64 @@ h5 {
 p {
   font-size: initial !important;
 }
+
+.btn-opensea {
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 14px 35px;
+  display: inline-block;
+  color: #fff;
+  border: 0px;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+   background: linear-gradient(359.79deg,
+    #FFFFFF -50.29%, 
+    #F1F1F1 -47.29%, 
+    #CFCFCF -35.26%, 
+    #B7B7B7 -26.24%, 
+    #A8A8A8 -15.71%, 
+    #A3A3A3 -8.19%, 
+    #E4E4E4 14.36%, 
+    #FFFFFF 21.88%, 
+    #DEDEDE 30.9%, 
+    #BCBCBC 41.42%, 
+    #A4A4A4 51.95%,
+    #959595 60.97%, 
+    #909090 69.99%, 
+    #9E9E9E 74.5%, 
+    #C3C3C3 85.03%, 
+    #FFFFFF 90.06%);
+}
+
+.btn-opensea:hover {
+   background: linear-gradient(359.79deg,
+    #FFFFFF -50.29%, 
+    #F1F1F1 -47.29%, 
+    #CFCFCF -35.26%, 
+    #B7B7B7 -26.24%, 
+    #A8A8A8 -15.71%, 
+    #A3A3A3 -8.19%, 
+    #E4E4E4 14.36%, 
+    #FFFFFF 21.88%, 
+    #DEDEDE 30.9%, 
+    #BCBCBC 41.42%, 
+    #A4A4A4 51.95%,
+    #959595 60.97%, 
+    #909090 69.99%, 
+    #9E9E9E 74.5%, 
+    #C3C3C3 85.03%, 
+    #FFFFFF 90.06%);
+  color: #fff;
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
 
 .btnsi {
   text-decoration: none;
@@ -458,54 +517,18 @@ p {
   background-size: cover;
   background-position: center center;
 }
-.cs-text{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.cs-logo{
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  bottom: 20px;
-  right: 20px;
-  width: 20%;
-}
-
-.bg-image-wrapper {
-   z-index:-1;
-   position: fixed;
-   display: flex;
-   flex-direction: column;   
-   justify-content: center;
-   align-items: center;
-   top: 0;
-   left: 0;
-   width: 100vw;
-   height: 100vh;
-   background-image: url(/images/navbar/cs4.png);
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center center;
-
- }
-
-.cs-banner-area {
+.banner-area-p {
   top: 0;
   left: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-color: #0b122e;
-  background-image: url(/images/navbar/cs-3.png);
+  background-image: url(/images/banner/banner-header.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
+
 
 .breadcrumb-area {
   padding: 310px 0px 186px;
@@ -533,7 +556,30 @@ p {
 .breadcrumb-area.bc-lottery {
   padding: 240px 0px 193px;
 }
-
+.dropdown-box{
+  margin-left: 10px;
+}
+#formcntrl{
+  color: #fff;
+}
+#network-id{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  padding: .7rem 2.5rem .7rem 1rem;
+  background: linear-gradient(180deg,
+      #bc923a 0%,
+      #ffdf94 53%,
+      #cfaa59 85%,
+      #9f8d63 100%);
+  border-radius: 2rem;
+}
+.chainimg{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
 .breadcrumb-area.bc-lottery .bc-img {
   position: absolute;
   right: 0px;
@@ -542,7 +588,9 @@ p {
   height: 100%;
   background-repeat: no-repeat;
 }
-
+.question-banner{
+  padding:5rem
+}
 .breadcrumb-area .title {
   font-size: 70px;
   line-height: 80px;
@@ -1130,10 +1178,333 @@ element.style p {
 }
 
 
+.cs-text{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.cs-logo{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  bottom: 20px;
+  right: 20px;
+  width: 20%;
+}
+.cs-logo img{
+  max-width: 80%;  
+  height: auto; 
+  object-fit: cover;   
+}
+
+.bg-image-wrapper {
+   z-index:-1;
+   position: fixed;
+   display: flex;
+   flex-direction: column;   
+   justify-content: center;
+   align-items: center;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background-image: url(/images/navbar/banner-header.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+
+ }
+
+.cs-banner-area {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #0b122e;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+
+/*Changes of new design*/
+
+.banner-text {
+  text-align: center;
+}
+
+.bg-image-wrapper .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.banner1-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0%;
+}
+
+.banner1-text img {
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
 
 
 
 
+
+.banner1-text-support {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+.banner1-text-support2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+.text-connect{
+  font-family: 'Modeco';
+  font-style: normal;
+  font-size: 22px;
+  background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  mix-blend-mode: normal;
+}
+.banner1-text-support h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 54px;
+  text-align: center;
+  background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+.banner1-text-support2 h3 {
+
+  margin-top: 1.7rem;
+  font-family: 'Modeco','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-style: bold;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 35px;
+  letter-spacing: 0.11em;
+  background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  mix-blend-mode: normal;
+  margin-bottom: 2rem;
+}
+.navbar-brand2{
+    margin-left: .5rem; 
+  }
+.count-prin{
+  /* 03D : 08H : 48M : 88S */
+
+
+  font-family: 'Modeco','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-style: bold;
+  font-weight: 1000;
+  font-size: 4rem;
+  /* identical to box height */
+
+  text-align: center;
+
+  /* BUTTON gradient */
+
+  background: linear-gradient(180deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #9F8D63 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+.banner1-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.banner1-qmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.bg-image-wrapper-banner2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.164), rgba(0, 0, 0, 0.247)),url(/images/banner/Imagen.png);
+  background-blend-mode: saturation;
+        box-shadow: inset 0px 0px 300px 300px rgba(8, 8, 8, 0.6);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-image-wrapper-banner2 .container {
+  padding-top: 10vw;
+  padding-bottom: 5vw;
+}
+
+.banner2-tg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: auto;
+  padding-top: 5vw;
+  width: 100%;
+}
+.banner2-tg img{
+  max-width: 90%;
+}
+
+.banner2-text h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 54px;
+  text-align: center;
+  background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+.wallet-btn{
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.banner2-text-list {
+  display: flex;
+  will-change: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px;
+}
+
+.banner2-text-list img {
+  padding-right: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.banner2-text-list h3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+
+.banner2-imageGroup .row .col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner2-imageGroup .row .col h3{
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 36px;
+text-align: center;
+background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+
+.banner2-imageGroup{
+  padding-top: 5%;
+}
+
+.banner2-bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 5vw;
+}
+
+.banner2-bottom h3{
+font-style: normal;
+font-weight: 700;
+font-size: 27px;
+line-height: 32px;
+background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+
+.banner2-bottom h1{
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+color: #FFFFFF;
+}
+
+.banner2-bottom h4{
+font-style: normal;
+font-weight: 300;
+font-size: 25px;
+line-height: 30px;
+text-align: center;
+color: #FFFFFF;
+}
+
+.banner2-bottom p{
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+  }
 
 
 

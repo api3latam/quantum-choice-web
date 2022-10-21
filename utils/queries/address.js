@@ -1,5 +1,7 @@
 import { firestoreClient } from "./auth";
 import { getTokenUri } from "../contracts";
+import { getTokenIds } from "../misc";
+
 
 /**
  * @notice Returns an array with the URIs from the 
@@ -13,28 +15,32 @@ import { getTokenUri } from "../contracts";
     userAddress,
     networkName
     ) {
-        const isMinted = await firestoreClient
+        const doc = await firestoreClient
             .collection("users")
             .doc(userAddress)
-            .get(`minted.${networkName}`);
-        if (isMinted === true) {
-            const tokenIds = await firestoreClient
-                .collection("address")
-                .doc(userAddress)
-                .get(`network.${networkName}`)
-            const tokenUris = 
-                tokenIds.length > 1
-                ? tokenIds.map(token => {
-                    const individualUri = getTokenUri(token['id']);
-                    const isShinny = token['isShinny'];
-                    return { id: individualUri, shinny: isShinny };
-                })
-                : [ { id: getTokenUri(tokenIds[0]['id']),
-                        shinny: tokenIds[0]['isShinny'] } ];
-            return tokenUris;
-        } else {
-            // Add alert or default image for loading
-            return [];
+            .get();
+        if (doc.exists) {
+            const isMinted = 
+                doc.data()['minted'][networkName] === undefined || 
+                doc.data()['minted'][networkName] === false
+                ? false
+                : true;
+            console.log(`Is token minted on ${networkName} for ${userAddress}?\
+                ${isMinted}`)
+            if (isMinted) {
+                const tokenIds = await getTokenIds(userAddress, networkName)
+                console.log(`tokenIds: ${tokenIds}`); 
+                const tokenUris = 
+                    tokenIds.length > 1
+                    ? await Promise.all(tokenIds.map( async (token) => {
+                        const individualUri = await getTokenUri(token, networkName);
+                        const isShinny = token <= 100 ? true: false;
+                        return { id: individualUri, shinny: isShinny };
+                    }))
+                    : [ { id: await getTokenUri(tokenIds[0], networkName),
+                            shinny: tokenIds[0] <= 100 ? true: false } ];
+                return tokenUris;
+                }
         }
 };
 

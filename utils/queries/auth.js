@@ -1,5 +1,7 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore/lite';
+import firebase from 'firebase/compat/app';
+
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
 const firebaseConfig = {
   apiKey: process.env['NEXT_PUBLIC_FIREBASE_API'],
@@ -11,6 +13,8 @@ const firebaseConfig = {
   measurementId: "G-2HP3ERTHWP"
 };
 
-const app = initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
 
-export const firestoreClient = getFirestore(app);
+export const firestoreClient = firebase.firestore();
