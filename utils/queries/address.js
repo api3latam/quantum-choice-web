@@ -59,3 +59,23 @@ export async function getTokenId(networkName) {
     // Filter 
     console.log(queryOutput);
 };
+
+
+/**
+ * @notice Returns the lasted minted from the collection metadata
+ * @returns
+ */
+export async function getLatestMinted() {
+    //Fetch the latest minted from the collection metadata
+    const query = await firestoreClient.collection('metadata')
+    const queryOutput = []
+    query.onSnapshot((snapshot) => {
+        snapshot.forEach((doc) => {
+            //Save the data and the id of the document in the array
+            queryOutput.push({id: doc.id, data: doc.data()})
+        
+        
+        });
+    });
+    return queryOutput;
+}
