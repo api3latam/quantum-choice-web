@@ -138,6 +138,8 @@ const Banner = () => {
          
             <div className="text-center">
               <div class="row text-center">
+                <h1 className="nft-txt">Make your choice</h1>
+                <p className="nft-txt2">Tap to get your NFT</p>
                 <div class="col-lg-12 m-2">
                   {isVideo ? (<video class="video-fluid z-depth-1" autoplay loop controls muted style={{ width: '250px', height: '400px' }}>
                     <source src={videoUrl} type="video/mp4" />

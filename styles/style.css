@@ -526,7 +526,7 @@ p {
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-image: url(/images/banner/banner-header.png);
+  background-image: url(/images/banner/banner-header.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -895,7 +895,7 @@ html body .lottery-area .daily-lottery .draw-time #subtitleid[style] {
 .latest-area {
   width: 100%;
   height: 100%;
-  background-image: url(/images/banner/096_GoldenAwards2.png);
+  background-image: url(/images/banner/096_GoldenAwards2.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -1295,6 +1295,39 @@ element.style p {
   margin-bottom: 3rem;
   margin-top: 3rem;
 }
+
+.nft-txt{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 54px;
+  text-align: center;
+  background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom:1rem;
+}
+.nft-txt2{
+
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+  background: linear-gradient(90deg, #BC923A 0%, #FFDF94 53%, #CFAA59 85%, #FFDF94 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
 .banner1-text-support2 h3 {
 
   margin-top: 1.7rem;
