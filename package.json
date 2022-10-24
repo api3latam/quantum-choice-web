@@ -22,6 +22,7 @@
     "@web3-react/core": "^6.1.9",
     "@web3-react/walletconnect-connector": "^6.2.13",
     "alchemy-sdk": "^2.1.0",
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.2.1",
     "ethers": "^5.7.1",
     "firebase": "^9.11.0",
