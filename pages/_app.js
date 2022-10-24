@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/bootstrap.min.css'
 import '../styles/responsive.css'
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import Navbar from '../components/navbar'
 
 
@@ -25,14 +25,28 @@ function MyApp({ Component, pageProps }) {
     useEffect(()=>{
     import("bootstrap/dist/js/bootstrap");
     },[])
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    }, []);
   return (
     
-     <Web3ReactProvider
-        getLibrary={getLibrary}
-      >
-      <Navbar />
-      <Component {...pageProps} />
-    </Web3ReactProvider>
+     <div>
+        {loading ? (<div className='loader-container'>
+          <div className='spinner'></div>
+        </div>):(
+         <div>
+           <Web3ReactProvider
+          getLibrary={getLibrary}
+        >
+          <Navbar />
+          <Component {...pageProps} />
+      </Web3ReactProvider>
+         </div>)}
+     </div>
   )
 }
 
