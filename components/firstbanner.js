@@ -2,13 +2,8 @@ import React, { useEffect } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useState} from 'react'
 import { useWeb3React } from '@web3-react/core'
-import Swal from "sweetalert2";
-import { networkIds,
-      getImageUrl } from "../utils/misc";
-import { setAddress,
-      getTokenStatus,
-      getSignedHash,
-      setSignedHash } from '../utils/queries';
+import { firestoreClient } from "../utils/queries";
+
 
 import 'animate.css'
 
@@ -18,8 +13,12 @@ const Fullbanner = () => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
+  const [totalPolygon, setTotalPolygon] = useState(0);
+  const [totalOptimism, setTotalOptimism] = useState(0);
+  const [totalArbitrium, setTotalArbitrium] = useState(0);
+  const [lastMinted, setLastMinted] = useState([]);
 
-  const countDownDate = new Date("Oct 15, 2022 23:59:59").getTime();
+  const countDownDate = new Date("Oct 31, 2022 23:59:59").getTime();
   const countdown = setInterval(() => {
     const now = new Date().getTime();
     const distance = countDownDate - now;
@@ -39,6 +38,45 @@ const Fullbanner = () => {
       setSeconds(0);
     }
   }, 1000);
+  //Async function to fetch the latest minted
+	const fetchLatestMinted = async () => {
+		//Fetch the latest minted from the collection metadata
+	
+		const query = await firestoreClient.collection('metadata');
+		const queryOutput = [];
+
+		query.onSnapshot((snapshot) => {
+			snapshot.forEach((doc) => {
+				//Set the latest minted with the data from the query and the id
+				queryOutput.push({ id: doc.id, ...doc.data() });
+			});
+		  //For each query output
+      console.log(queryOutput.length);
+      let poly =0
+      let optim =0
+      let arbit =0
+      queryOutput.forEach((item) => {
+        if(item.polygon){
+          poly +=1
+        }
+        if(item.optimism){
+          optim +=1
+        }
+        if(item.arbitrum){
+          arbit +=1
+        }
+
+      });
+      setTotalPolygon(poly)
+      setTotalOptimism(optim)
+      setTotalArbitrium(arbit)
+		});
+		//Set the latest minted with the data from the query
+
+	};
+  useEffect(() => {
+    fetchLatestMinted();
+  }, []);
 
   return (
     <div>
@@ -76,7 +114,7 @@ const Fullbanner = () => {
                 <div class="single-staticstics">
                   <div class="left">
                     <div class="icon">
-                      <img src="/images/navbar/_17-2.png" />
+                      <img src="/images/banner/vectorticket.png" />
                     </div>
                   </div>
                   {/* TODO: ADD NETWORKS LOGO*/}
@@ -84,7 +122,7 @@ const Fullbanner = () => {
                     <h4 class="title">Polygon</h4>
                     <div class="count">
                         <img src="/images/banner/Group50.png" />
-                        <span>1.4888</span>
+                        <span>{totalPolygon} minted</span>
                     </div>
                   </div>
                 </div>
@@ -100,7 +138,7 @@ const Fullbanner = () => {
                     <h4 class="title">Optimism</h4>
                     <div class="count">
                       <img src="/images/banner/Group50.png" />
-                      <span>120</span>
+                      <span>{totalOptimism} minted</span>
                     </div>
                   </div>
                 </div>
@@ -116,7 +154,7 @@ const Fullbanner = () => {
                     <h4 class="title">Arbitrium</h4>
                     <div class="count">
                       <img src="/images/banner/Group50.png" />
-                      <span>02</span>
+                      <span>{totalArbitrium} minted</span>
                     </div>
                   </div>
                 </div>

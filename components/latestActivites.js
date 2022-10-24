@@ -26,7 +26,6 @@ const LatestActivites = () => {
 		query.onSnapshot((snapshot) => {
 			snapshot.forEach((doc) => {
 				//Set the latest minted with the data from the query and the id
-				console.log("DATA", doc.data());
 				queryOutput.push({ id: doc.id, ...doc.data() });
 			});
 			setLatestMinted(queryOutput);
