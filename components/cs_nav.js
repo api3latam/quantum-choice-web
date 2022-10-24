@@ -37,29 +37,25 @@ const Navbar = () => {
 
                 <div className='navbar-area'>
                     <div className='container'>
-                        <nav class="navbar sticky-top navbar-expand-lg ">
+                        <nav class="navbar">
                             <div class="container-fluid">
-
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
                                 <a className="navbar-brand" href="/">
                                     <img src='/images/navbar/Frame.png' />
                                 </a>
 
-                                <div class="navbar-collapse collapse" id="navbarTogglerDemo01">
+                                <div class="" id="navbarTogglerDemo01">
 
                                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                         <li class="nav-item">
-                                            <a className="nav-link" href="/" data-toggle="collapse" data-target="#navbarTogglerDemo01">HOME
+                                            <a className="nav-link" href="/">HOME
                                                 <div className="mr-hover-effect"></div></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a className="nav-link" href="#" data-toggle="collapse" data-target="#navbarTogglerDemo01">PLAY
+                                            <a className="nav-link" href="#">PLAY
                                                 <div className="mr-hover-effect"></div></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a className="nav-link" href="#" data-toggle="collapse" data-target="#navbarTogglerDemo01">CHOICE
+                                            <a className="nav-link" href="#">CHOICE
                                                 <div className="mr-hover-effect"></div></a>
                                         </li>
                                          

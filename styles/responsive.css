@@ -36,25 +36,30 @@
 }
 
 @media (max-width: 991px) {
-  #network-id{
-    color: #fff;
-    font-size: 18px;
-    font-weight: 400;
-    padding: .6rem 2.5rem .6rem 1rem;
-    background: linear-gradient(180deg,
-        #bc923a 0%,
-        #ffdf94 53%,
-        #cfaa59 85%,
-        #9f8d63 100%);
-    border-radius: 2rem;
+    .btnju{
+      display:flex;
+      flex-direction:column;
+    }
+    #formcntrl{
+      color: #fff;
+    }
+    #network-id{
+      color: #fff;
+      background: linear-gradient(180deg,
+          #bc923a 0%,
+          #ffdf94 53%,
+          #cfaa59 85%,
+          #9f8d63 100%);
+      border-radius: 2rem;
+    }
+  .chainimg{
+   margin-right: 0;
+   border-radius: 50%;
   }
-  #formcntrl{
-    margin-left: 6px;
-  }
-  
   .navbar-container  .navbar-area .navbar .navbar-brand{
     padding-top: 10px;
   }
+
 
   .navbar-toggler {
     color: #FFDF94;
@@ -182,6 +187,26 @@
 }
 
 @media (max-width: 767px) {
+      #formcntrl{
+      color: #fff;
+    }
+    #network-id{
+      color: #fff;
+      background: linear-gradient(180deg,
+          #bc923a 0%,
+          #ffdf94 53%,
+          #cfaa59 85%,
+          #9f8d63 100%);
+      border-radius: 2rem;
+    }
+  .ntwname{
+    display: none;
+  }
+  .chainimg{
+  margin-right: 0;
+   border-radius: 50%;
+  }
+
   .navbar-brand2{
     display: none;
   }
@@ -203,6 +228,15 @@
 
   .navbar-container .top-header .content .right-content {
     text-align: center;
+  }
+
+    .navbar-container .navbar-area .navbar #main_menu .navbar-nav{
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
   }
 
   .activities .tab-menu-area .nav-lend .nav-item .nav-link {
