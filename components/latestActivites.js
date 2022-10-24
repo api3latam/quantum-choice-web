@@ -194,8 +194,8 @@ const LatestActivites = () => {
 						<tbody>
 							{latestMinted.map((metadata,i) => (
 								<>
-									{metadata['polygon'].map((item, i) => (
-										<tr key={i}>
+									{metadata['polygon'].map((item, j) => (
+										<tr key={j}>
 											<td>{shortenAddress(metadata.id)}</td>
 											<td><img src={chainimage[networkName]} className='chainimg'/>{networkName}</td>
 											<td>{item.id}</td>
