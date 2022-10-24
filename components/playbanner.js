@@ -10,7 +10,6 @@ import { setAddress,
       getTokenStatus,
       getSignedHash,
       setSignedHash } from '../utils/queries';
-
       
 const Banner = () => {
   /**State for image url */

@@ -10,6 +10,7 @@ import { setAddress,
       getSignedHash,
       setSignedHash } from '../utils/queries';
 
+import 'animate.css'
 
 
 const Fullbanner = () => {
@@ -41,7 +42,7 @@ const Fullbanner = () => {
 
   return (
     <div>
-      <div className="banner-area-p">
+      <div className="banner-area-p ">
         <section class="breadcrumb-area bc-lottery">
           {/* <img class="bc-img" src="/images/navbar/096_GoldenAwards1.png" alt=""/>*/}
 
@@ -49,16 +50,16 @@ const Fullbanner = () => {
             <div class="row">
               <div class="col-lg-12">
                 <div className="banner1-text">
-                  <img src="/images/banner/logo-qc-banner2.webp" alt="" className="img-fluid"/>
+                  <img src="/images/banner/logo-qc-banner2.webp" alt="" className="img-fluid animate__animated  animate__backInUp "/>
                 </div>
                  <div className="banner1-text">
-                  <img src="/images/banner/1-banner-qc3.webp" alt="" className="img-fluid"/>
+                  <img src="/images/banner/1-banner-qc3.webp" alt="" className="img-fluid animate__animated  animate__backInUp "/>
                   
                 </div>
-                <div className="banner1-text-support2">
+                <div className="banner1-text-support2 animate__animated  animate__backInUp ">
                     <h3>Enter to win the first on-chain Quantum Raffle NFT</h3>
                 </div>
-                <div className="banner1-text-support">
+                <div className="banner1-text-support animate__animated animate__backInUp">
                     <h1 className="count-prin">{days}D : {hours}H : {minutes}M : {seconds}S</h1>
                 </div>
              
