@@ -211,9 +211,15 @@ const LatestActivites = () => {
 			</div>
 
 		<div className="attribution">
-				<a target="_blank" rel="noopener noreferrer" href="https://api3.org/qrng">
-					<img src="images/banner/banner-qrng1.png" width="100" height="65" />	
-				</a>
+				 <a className="navbar-brand2" href='https://twitter.com/API3Latam'>
+                                    <img src='/images/navbar/icon-tw.png' />
+                                </a>
+                                <a className="navbar-brand2" href='https://qrng.anu.edu.au/' >
+                                    <img src='/images/navbar/logo-qr.png' />
+                                </a>
+                                <a className="navbar-brand2" href='https://api3.org/QRNG'>
+                                    <img src='/images/navbar/api3qrng.png' />
+                                </a>
 			</div>
 		</div>
 		
