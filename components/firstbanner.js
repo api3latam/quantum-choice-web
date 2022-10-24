@@ -49,10 +49,10 @@ const Fullbanner = () => {
             <div class="row">
               <div class="col-lg-12">
                 <div className="banner1-text">
-                  <img src="/images/banner/logo-qc-banner2.png" alt="" className="img-fluid"/>
+                  <img src="/images/banner/logo-qc-banner2.webp" alt="" className="img-fluid"/>
                 </div>
                  <div className="banner1-text">
-                  <img src="/images/banner/1-banner-qc3.png" alt="" className="img-fluid"/>
+                  <img src="/images/banner/1-banner-qc3.webp" alt="" className="img-fluid"/>
                   
                 </div>
                 <div className="banner1-text-support2">
