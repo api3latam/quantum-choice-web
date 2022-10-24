@@ -40,8 +40,7 @@ export default function Dropdown() {
     /**TODO:
      * Add styling to the dropdown menu
      */
-    <Box sx={{ minWidth: 120 }} className='dropdown-box'>
-      <FormControl fullWidth  id='formcntrl'>
+      <FormControl  variant="filled" sx={{ m: 1, minWidth: 120 }}  className='dropdown-box' id='formcntrl'>
         <Select
           labelId="network-select"
           id="network-id"
@@ -49,11 +48,10 @@ export default function Dropdown() {
           label="network"
           onChange={handleChange}
         >
-          <MenuItem value={137}><img src={chainimage.matic} className='chainimg'/>Polygon</MenuItem>
-          <MenuItem value={42161}><img src={chainimage.arbitrium} className='chainimg'/>Arbitrum</MenuItem>
-          <MenuItem value={10}><img src={chainimage.optimism} className='chainimg'/>Optimism</MenuItem>
+          <MenuItem value={137}><img src={chainimage.matic} className='chainimg'/><span className='ntwname'>Polygon</span></MenuItem>
+          <MenuItem value={42161}><img src={chainimage.arbitrium} className='chainimg'/><span className='ntwname'>Arbitrum</span></MenuItem>
+          <MenuItem value={10}><img src={chainimage.optimism} className='chainimg'/><span className='ntwname'>Optimism</span></MenuItem>
         </Select>
       </FormControl>
-    </Box>
   );
 }
