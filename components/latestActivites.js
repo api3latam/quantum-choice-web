@@ -20,7 +20,7 @@ const LatestActivites = () => {
 	const fetchLatestMinted = async () => {
 		//Fetch the latest minted from the collection metadata
 	
-		const query = await firestoreClient.collection('metadata').limit(20);
+		const query = await firestoreClient.collection('metadata').orderBy('lastMinted','desc').limit(8);
 		const queryOutput = [];
 
 		query.onSnapshot((snapshot) => {
@@ -66,28 +66,16 @@ const LatestActivites = () => {
         }
     }
 
-	//Render the latest minted
-	const renderLatestMinted = () => {
-		console.log(latestMinted);
-		const arr = latestMinted[4]
-		console.log(arr)
-		console.log(arr.id);
-		
-		//For each in the networkshandler array
-		networkshandler.forEach(item => {
-			//If the latest minted has the network name
-			if (arr[item]) {
-				//Return the network name
-				console.log("INSIDE",arr[item][0].id);
-			}
-		});
-	};
+
 
 	//Get how long ago the latest minted was minted from the timestamp
 	const getTimeAgo = (timestamp) => {
 		const date = new Date(timestamp.toDate());
 		const seconds = Math.floor((new Date() - date) / 1000);
 		let interval = Math.floor(seconds / 31536000);
+		/* Calculating the time difference between the current time and the time when the latest minted was
+		minted. */
+		
 		if (interval > 1) {
 			return interval + " years ago";
 		}
@@ -119,7 +107,7 @@ const LatestActivites = () => {
 					<div class="row justify-content-center">
 						<div class="col-lg-8 col-md-10">
 							<div className="info-area">
-								<h5 class="title2" onClick={renderLatestMinted}>Daily Choice</h5>
+								<h5 class="title2">Daily Choice</h5>
 								<h2 class="title">Latest Activites</h2>
 								<p class="text">
 									The world's first truly fair and global choice, Each player
