@@ -62,9 +62,7 @@ const Navbar = () => {
                                 
                                 <div id="navbarTogglerDemo01">
                                     <Link href='/'>
-                                        <a className="navbar-brand" >
-                                            <img src='/images/navbar/Frame.png' />
-                                        </a>
+                                        <img className="navbar-brand"  src='/images/navbar/Frame.png' />
                                     </Link>
                                     <ul class="navbar-nav2">
                                         <li class="nav-item">
