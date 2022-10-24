@@ -45,12 +45,7 @@
     }
     #network-id{
       color: #fff;
-      background: linear-gradient(180deg,
-          #bc923a 0%,
-          #ffdf94 53%,
-          #cfaa59 85%,
-          #9f8d63 100%);
-      border-radius: 2rem;
+    
     }
   .chainimg{
    margin-right: 0;
@@ -192,12 +187,7 @@
     }
     #network-id{
       color: #fff;
-      background: linear-gradient(180deg,
-          #bc923a 0%,
-          #ffdf94 53%,
-          #cfaa59 85%,
-          #9f8d63 100%);
-      border-radius: 2rem;
+
     }
   .ntwname{
     display: none;

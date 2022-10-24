@@ -48,9 +48,9 @@ export default function Dropdown() {
           label="network"
           onChange={handleChange}
         >
-          <MenuItem value={137}><img src={chainimage.matic} className='chainimg'/><span className='ntwname'>Polygon</span></MenuItem>
-          <MenuItem value={42161}><img src={chainimage.arbitrium} className='chainimg'/><span className='ntwname'>Arbitrum</span></MenuItem>
-          <MenuItem value={10}><img src={chainimage.optimism} className='chainimg'/><span className='ntwname'>Optimism</span></MenuItem>
+          <MenuItem value={137}><img src={chainimage.matic} className='chainimg'/><span className=''>Polygon</span></MenuItem>
+          <MenuItem value={42161}><img src={chainimage.arbitrium} className='chainimg'/><span className=''>Arbitrum</span></MenuItem>
+          <MenuItem value={10}><img src={chainimage.optimism} className='chainimg'/><span className=''>Optimism</span></MenuItem>
         </Select>
       </FormControl>
   );
