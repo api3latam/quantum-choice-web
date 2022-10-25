@@ -23,7 +23,7 @@ const Banner = () => {
   const [ isInitialized, setInitialization ] = useState(false);
   const [ isVideo, setIsVideo ] = useState(false);
   const [ openseaLink, setOpenseaLink] = useState("");
-  const [ isBeignMinted, setIsBeingMinted ] = useState(true);
+  const [ isBeignMinted, setIsBeingMinted ] = useState(false);
   const { active, account } = useWeb3React();
 
   let network = "polygon";
