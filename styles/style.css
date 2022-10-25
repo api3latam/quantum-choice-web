@@ -376,6 +376,7 @@ p {
 .navbar-container .navbar-area .navbar .navbar-brand {
   padding: 0px;
   margin: 0px;
+  cursor: pointer;
 }
 
 .navbar-container .navbar-area .navbar .mybtn1 {
