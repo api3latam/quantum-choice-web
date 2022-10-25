@@ -7,7 +7,7 @@ const fullbanner2 = () => {
   return (
     <div className="bg-image-wrapper-banner2">
       <div className="container">
-        <div className="banner2-tg">
+        <div className="banner2-tg banner-ht">
           <img src="/images/banner/Group62.png" alt=""/>
         </div>
         <div className="banner2-text">
