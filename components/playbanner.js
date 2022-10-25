@@ -184,7 +184,7 @@ const Banner = () => {
                   <div>
                     <h1 className="nft-txt">You made the choice</h1>
                     <p className="nft-txt2">your NFT will appear here soon</p>
-                      <img src={NFTLoader} alt="" className="img-fluid"/>
+                      <img src={NFTLoader} alt="" className="img-fluid" width={500} height={500}/>
                   </div>
                   
                 </div>
